@@ -1,9 +1,18 @@
-<style>
-  h1 {
-    color: red;
-  }
-</style>
+{% load static %}
+<link rel="stylesheet" href="{% static 'core/styles.css' %}" />
 
-<h1>Si pude</h1>
-<p> Prueba pr</p>
+<h1>Job Offers</h1>
 
+<ul>
+  {% for job in jobs %}
+  <li>
+    <h2>{{ job.title }}</h2>
+    <p><strong>Company:</strong> {{ job.company.name }}</p>
+    <p><strong>Type:</strong> {{ job.get_employment_type_display }}</p>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Posted:</strong> {{ job.created_at|date:"Y-m-d" }}</p>
+  </li>
+  {% empty %}
+  <li>No job offers available.</li>
+  {% endfor %}
+</ul>
