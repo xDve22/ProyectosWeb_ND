@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Página no encontrada{% endblock %}
+
+{% block content %}
+  <h1>404 - Página no encontrada</h1>
+  <p>Lo sentimos, el recurso que buscas no existe.</p>
+  <a href="{% url 'job_list' %}">Volver al inicio</a>
+{% endblock %}

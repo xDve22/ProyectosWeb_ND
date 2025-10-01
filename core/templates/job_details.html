@@ -1,1 +1,14 @@
-<div>{{ job.description|safe }}</div>
+{% extends "base.html" %}
+
+{% block title %}{{ job.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ job.title }}</h1>
+  <p><strong>Company:</strong> {{ job.company.name }}</p>
+  <p><strong>Location:</strong> {{ job.location }}</p>
+  <p><strong>Type:</strong> {{ job.employment_type }}</p>
+  <div>
+    {{ job.description|safe }}
+  </div>
+  <p><em>Publicado: {{ job.created_at }}</em></p>
+{% endblock %}
