@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
 from .models import JobOffer
-from .forms import JobOfferForm
+from .forms import JobOfferForm, JobFilterForm
 
 def job_create(request):
     if request.method == "POST":
@@ -14,7 +15,25 @@ def job_create(request):
 
 def job_list(request):
     jobs = JobOffer.objects.select_related("company").order_by("-created_at")
-    return render(request, "dashboard.html", {"jobs": jobs})
+    form = JobFilterForm(request.GET or None)
+
+    if form.is_valid():
+        title_or_company = form.cleaned_data.get("title_or_company")
+        location = form.cleaned_data.get("location")
+        full_time_only = form.cleaned_data.get("full_time_only")
+
+        if title_or_company:
+            jobs = jobs.filter(
+                Q(title__icontains=title_or_company)
+                | Q(company__name__icontains=title_or_company)
+                | Q(description__icontains=title_or_company)
+            )
+        if location:
+            jobs = jobs.filter(location__icontains=location)
+        if full_time_only:
+            jobs = jobs.filter(employment_type="FT")
+
+    return render(request, "dashboard.html", {"jobs": jobs, "form": form})
 
 def job_detail(request, pk):
     job = get_object_or_404(JobOffer, pk=pk)

@@ -14,3 +14,19 @@ class JobOfferForm(forms.ModelForm):
             "company": forms.Select(attrs={"placeholder": "Select a company"}),
             "description": forms.HiddenInput(),
         }
+
+class JobFilterForm(forms.Form):
+    title_or_company = forms.CharField(
+        required=False,
+        label="Title / Company / Expertise",
+        widget=forms.TextInput(attrs={"placeholder": "Search..."}),
+    )
+    location = forms.CharField(
+        required=False,
+        label="Location",
+        widget=forms.TextInput(attrs={"placeholder": "Filter by location"}),
+    )
+    full_time_only = forms.BooleanField(
+        required=False,
+        label="Full time only",
+    )
