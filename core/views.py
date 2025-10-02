@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
+from django.core.paginator import Paginator
 from .models import JobOffer
 from .forms import JobOfferForm, JobFilterForm
 
@@ -33,7 +34,22 @@ def job_list(request):
         if full_time_only:
             jobs = jobs.filter(employment_type="FT")
 
-    return render(request, "dashboard.html", {"jobs": jobs, "form": form})
+    per_page = 12
+    page = int(request.GET.get("page", 1))
+    paginator = Paginator(jobs, per_page)
+
+    jobs_page = paginator.get_page(page)
+
+    return render(
+        request,
+        "dashboard.html",
+        {
+            "jobs": jobs_page,
+            "form": form,
+            "page": page,
+            "has_next": jobs_page.has_next(),
+        },
+    )
 
 def job_detail(request, pk):
     job = get_object_or_404(JobOffer, pk=pk)

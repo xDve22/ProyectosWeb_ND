@@ -18,5 +18,17 @@
     <li>No job offers available.</li>
     {% endfor %}
   </ul>
+
+  {% if has_next %}
+    <form method="get">
+      {% for key, value in request.GET.items %}
+        {% if key != 'page' %}
+          <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endif %}
+      {% endfor %}
+      <input type="hidden" name="page" value="{{ page|add:1 }}">
+      <button type="submit">Load more</button>
+    </form>
+  {% endif %}
 </main>
 {% endblock %}

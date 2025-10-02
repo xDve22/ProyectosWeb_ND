@@ -8,100 +8,42 @@
       "website": "https://openai.com"
     }
   },
-  {
-    "model": "core.joboffer",
-    "pk": 1,
-    "fields": {
-      "company": 1,
-      "title": "Senior Software Engineer",
-      "description": "<p>Exciting opportunity for a senior software engineer!</p>",
-      "location": "United Kingdom",
-      "employment_type": "FT",
-      "created_at": "2025-09-30T12:00:00Z"
-    }
-  },
-  {
-    "model": "core.joboffer",
-    "pk": 2,
-    "fields": {
-      "company": 1,
-      "title": "Haskell and PureScript Dev",
-      "description": "<p>Join our team as a Haskell and PureScript developer.</p>",
-      "location": "United States",
-      "employment_type": "PT",
-      "created_at": "2025-09-29T12:00:00Z"
-    }
-  },
-  {
-    "model": "core.joboffer",
-    "pk": 3,
-    "fields": {
-      "company": 1,
-      "title": "Midlevel Back End Engineer",
-      "description": "<p>Looking for a midlevel backend engineer with solid experience.</p>",
-      "location": "Russia",
-      "employment_type": "PT",
-      "created_at": "2025-09-29T10:00:00Z"
-    }
-  },
-  {
-    "model": "core.joboffer",
-    "pk": 4,
-    "fields": {
-      "company": 1,
-      "title": "Senior Application Engineer",
-      "description": "<p>Seeking a senior application engineer for international projects.</p>",
-      "location": "Japan",
-      "employment_type": "FT",
-      "created_at": "2025-09-28T12:00:00Z"
-    }
-  },
-  {
-    "model": "core.joboffer",
-    "pk": 5,
-    "fields": {
-      "company": 1,
-      "title": "Remote DevOps Engineer",
-      "description": "<p>Work remotely as a DevOps engineer.</p>",
-      "location": "Thailand",
-      "employment_type": "PT",
-      "created_at": "2025-09-28T08:00:00Z"
-    }
-  },
-  {
-    "model": "core.joboffer",
-    "pk": 6,
-    "fields": {
-      "company": 1,
-      "title": "Desktop Support Manager",
-      "description": "<p>We are looking for a desktop support manager.</p>",
-      "location": "Germany",
-      "employment_type": "PT",
-      "created_at": "2025-09-26T12:00:00Z"
-    }
-  },
-  {
-    "model": "core.joboffer",
-    "pk": 7,
-    "fields": {
-      "company": 1,
-      "title": "iOS Engineer",
-      "description": "<p>Hiring an iOS engineer to build great apps.</p>",
-      "location": "United States",
-      "employment_type": "FT",
-      "created_at": "2025-09-24T12:00:00Z"
-    }
-  },
-  {
-    "model": "core.joboffer",
-    "pk": 8,
-    "fields": {
-      "company": 1,
-      "title": "Senior EJB Developer",
-      "description": "<p>Seeking an experienced EJB developer for backend solutions.</p>",
-      "location": "United Kingdom",
-      "employment_type": "FT",
-      "created_at": "2025-09-24T10:00:00Z"
-    }
-  }
+
+  { "model": "core.joboffer", "pk": 1, "fields": { "company": 1, "title": "Senior Software Engineer", "description": "Exciting opportunity for a senior software engineer!", "location": "United Kingdom", "employment_type": "FT", "created_at": "2025-09-30T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 2, "fields": { "company": 1, "title": "Haskell and PureScript Dev", "description": "Join our team as a Haskell and PureScript developer.", "location": "United States", "employment_type": "PT", "created_at": "2025-09-29T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 3, "fields": { "company": 1, "title": "Midlevel Back End Engineer", "description": "Looking for a midlevel backend engineer with solid experience.", "location": "Russia", "employment_type": "PT", "created_at": "2025-09-29T10:00:00Z" }},
+  { "model": "core.joboffer", "pk": 4, "fields": { "company": 1, "title": "Senior Application Engineer", "description": "Seeking a senior application engineer for international projects.", "location": "Japan", "employment_type": "FT", "created_at": "2025-09-28T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 5, "fields": { "company": 1, "title": "Remote DevOps Engineer", "description": "Work remotely as a DevOps engineer.", "location": "Thailand", "employment_type": "PT", "created_at": "2025-09-28T08:00:00Z" }},
+  { "model": "core.joboffer", "pk": 6, "fields": { "company": 1, "title": "Desktop Support Manager", "description": "We are looking for a desktop support manager.", "location": "Germany", "employment_type": "PT", "created_at": "2025-09-26T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 7, "fields": { "company": 1, "title": "iOS Engineer", "description": "Hiring an iOS engineer to build great apps.", "location": "United States", "employment_type": "FT", "created_at": "2025-09-24T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 8, "fields": { "company": 1, "title": "Senior EJB Developer", "description": "Seeking an experienced EJB developer for backend solutions.", "location": "United Kingdom", "employment_type": "FT", "created_at": "2025-09-24T10:00:00Z" }},
+  
+  { "model": "core.joboffer", "pk": 9, "fields": { "company": 1, "title": "Python Developer 1", "description": "We are hiring Python devs.", "location": "Canada", "employment_type": "FT", "created_at": "2025-09-23T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 10, "fields": { "company": 1, "title": "Python Developer 2", "description": "We are hiring Python devs.", "location": "Brazil", "employment_type": "PT", "created_at": "2025-09-23T10:00:00Z" }},
+  { "model": "core.joboffer", "pk": 11, "fields": { "company": 1, "title": "Python Developer 3", "description": "We are hiring Python devs.", "location": "France", "employment_type": "FT", "created_at": "2025-09-22T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 12, "fields": { "company": 1, "title": "Python Developer 4", "description": "We are hiring Python devs.", "location": "Spain", "employment_type": "FT", "created_at": "2025-09-21T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 13, "fields": { "company": 1, "title": "Python Developer 5", "description": "We are hiring Python devs.", "location": "Italy", "employment_type": "PT", "created_at": "2025-09-20T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 14, "fields": { "company": 1, "title": "Python Developer 6", "description": "We are hiring Python devs.", "location": "Mexico", "employment_type": "FT", "created_at": "2025-09-19T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 15, "fields": { "company": 1, "title": "Python Developer 7", "description": "We are hiring Python devs.", "location": "Chile", "employment_type": "PT", "created_at": "2025-09-18T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 16, "fields": { "company": 1, "title": "Python Developer 8", "description": "We are hiring Python devs.", "location": "Argentina", "employment_type": "FT", "created_at": "2025-09-17T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 17, "fields": { "company": 1, "title": "Python Developer 9", "description": "We are hiring Python devs.", "location": "Colombia", "employment_type": "FT", "created_at": "2025-09-16T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 18, "fields": { "company": 1, "title": "Python Developer 10", "description": "We are hiring Python devs.", "location": "Peru", "employment_type": "PT", "created_at": "2025-09-15T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 19, "fields": { "company": 1, "title": "Python Developer 11", "description": "We are hiring Python devs.", "location": "India", "employment_type": "FT", "created_at": "2025-09-14T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 20, "fields": { "company": 1, "title": "Python Developer 12", "description": "We are hiring Python devs.", "location": "China", "employment_type": "FT", "created_at": "2025-09-13T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 21, "fields": { "company": 1, "title": "Python Developer 13", "description": "We are hiring Python devs.", "location": "South Korea", "employment_type": "PT", "created_at": "2025-09-12T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 22, "fields": { "company": 1, "title": "Python Developer 14", "description": "We are hiring Python devs.", "location": "Australia", "employment_type": "FT", "created_at": "2025-09-11T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 23, "fields": { "company": 1, "title": "Python Developer 15", "description": "We are hiring Python devs.", "location": "South Africa", "employment_type": "PT", "created_at": "2025-09-10T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 24, "fields": { "company": 1, "title": "Python Developer 16", "description": "We are hiring Python devs.", "location": "Egypt", "employment_type": "FT", "created_at": "2025-09-09T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 25, "fields": { "company": 1, "title": "Python Developer 17", "description": "We are hiring Python devs.", "location": "Turkey", "employment_type": "FT", "created_at": "2025-09-08T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 26, "fields": { "company": 1, "title": "Python Developer 18", "description": "We are hiring Python devs.", "location": "Poland", "employment_type": "PT", "created_at": "2025-09-07T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 27, "fields": { "company": 1, "title": "Python Developer 19", "description": "We are hiring Python devs.", "location": "Norway", "employment_type": "FT", "created_at": "2025-09-06T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 28, "fields": { "company": 1, "title": "Python Developer 20", "description": "We are hiring Python devs.", "location": "Sweden", "employment_type": "FT", "created_at": "2025-09-05T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 29, "fields": { "company": 1, "title": "Python Developer 21", "description": "We are hiring Python devs.", "location": "Finland", "employment_type": "PT", "created_at": "2025-09-04T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 30, "fields": { "company": 1, "title": "Python Developer 22", "description": "We are hiring Python devs.", "location": "Denmark", "employment_type": "FT", "created_at": "2025-09-03T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 31, "fields": { "company": 1, "title": "Python Developer 23", "description": "We are hiring Python devs.", "location": "Ireland", "employment_type": "FT", "created_at": "2025-09-02T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 32, "fields": { "company": 1, "title": "Python Developer 24", "description": "We are hiring Python devs.", "location": "Portugal", "employment_type": "PT", "created_at": "2025-09-01T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 33, "fields": { "company": 1, "title": "Python Developer 25", "description": "We are hiring Python devs.", "location": "Switzerland", "employment_type": "FT", "created_at": "2025-08-31T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 34, "fields": { "company": 1, "title": "Python Developer 26", "description": "We are hiring Python devs.", "location": "Austria", "employment_type": "FT", "created_at": "2025-08-30T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 35, "fields": { "company": 1, "title": "Python Developer 27", "description": "We are hiring Python devs.", "location": "Belgium", "employment_type": "PT", "created_at": "2025-08-29T12:00:00Z" }},
+  { "model": "core.joboffer", "pk": 36, "fields": { "company": 1, "title": "Python Developer 28", "description": "We are hiring Python devs.", "location": "Netherlands", "employment_type": "FT", "created_at": "2025-08-28T12:00:00Z" }}
 ]
