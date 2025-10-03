@@ -8,7 +8,25 @@
     <title>{% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
   </head>
+
   <body>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a href="/" class="site-header__logo">devjobs</a>
+        <div class="site-header__toggle">
+          <img src="{% static 'icons/icon-sun.svg' %}" alt="Light Mode" class="icon">
+
+          <label class="switch">
+            <input type="checkbox" id="theme-toggles">
+            <span class="slider round"></span>
+          </label>
+
+          <img src="{% static 'icons/icon-moon.svg' %}" alt="Dark Mode" class="icon">
+
+        </div>
+      </div>
+    </header>
+        
     {% block content %}{% endblock %}
     {% if debug %}
         <script src="{% url 'django_browser_reload:reload' %}"></script>
