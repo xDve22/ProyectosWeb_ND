@@ -1,6 +1,20 @@
-<form method="get">
-  <div>{{ form.title_or_company }}</div>
-  <div>{{ form.location }}</div>
-  <div>{{ form.full_time_only }} {{ form.full_time_only.label_tag }}</div>
-  <button type="submit">Filter</button>
+{% load static %}
+
+<form method="get" class="search-form">
+  <div class="search-form__field">
+    <img src="{% static 'icons/icon-search.svg' %}" alt="Search">
+    {{ form.title_or_company }}
+  </div>
+
+  <div class="search-form__field">
+    <img src="{% static 'icons/icon-search.svg' %}" alt="Location">
+    {{ form.location }}
+  </div>
+
+  <div class="search-form__checkbox">
+    {{ form.full_time_only }} {{ form.full_time_only.label_tag }}
+  </div>
+
+  <button type="submit" class="search-form__button">Search</button>
 </form>
+

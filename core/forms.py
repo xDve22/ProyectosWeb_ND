@@ -19,7 +19,7 @@ class JobFilterForm(forms.Form):
     title_or_company = forms.CharField(
         required=False,
         label="Title / Company / Expertise",
-        widget=forms.TextInput(attrs={"placeholder": "Search..."}),
+        widget=forms.TextInput(attrs={"placeholder": "Filter by title, companies, expertise…"}),
     )
     location = forms.CharField(
         required=False,
@@ -29,4 +29,5 @@ class JobFilterForm(forms.Form):
     full_time_only = forms.BooleanField(
         required=False,
         label="Full time only",
+        label_suffix="",
     )
