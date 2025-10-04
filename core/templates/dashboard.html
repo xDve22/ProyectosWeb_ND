@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Job Offers{% endblock %}
+
+{% load static %}
 {% load time_filters %}
 
 {% block content %}
@@ -9,6 +11,11 @@
   <ul>
     {% for job in jobs %}
     <li>
+      {% if job.company.logo %}
+        <img src="{{ job.company.logo.url }}" alt="{{ job.company.name }}" width="50">
+      {% else %}
+        <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
+      {% endif %}
       <h2><a href="{% url 'job_detail' job.pk %}">{{ job.title }}</a></h2>
       <p><strong>Company:</strong> {{ job.company.name }}</p>
       <p><strong>Type:</strong> {{ job.get_employment_type_display }}</p>

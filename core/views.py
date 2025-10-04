@@ -6,12 +6,19 @@ from .forms import JobOfferForm, JobFilterForm
 
 def job_create(request):
     if request.method == "POST":
-        form = JobOfferForm(request.POST)
+        form = JobOfferForm(request.POST, request.FILES) 
         if form.is_valid():
-            form.save()
+            job = form.save(commit=False)
+            logo = form.cleaned_data.get("logo")
+            if logo:
+                company = job.company
+                company.logo = logo
+                company.save()
+            job.save()
             return redirect("job_list")
     else:
         form = JobOfferForm()
+
     return render(request, "job_create.html", {"form": form})
 
 def job_list(request):

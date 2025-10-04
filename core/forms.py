@@ -3,7 +3,7 @@ from .models import JobOffer
 
 class JobOfferForm(forms.ModelForm):
     description = forms.CharField(widget=forms.HiddenInput())
-
+    logo = forms.ImageField(required=False)
     class Meta:
         model = JobOffer
         fields = ["company", "title", "description", "location", "employment_type"]
