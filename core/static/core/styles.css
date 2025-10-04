@@ -106,7 +106,7 @@
 .slider {
   position: absolute;
   cursor: pointer;
-  inset: 0; /* ta cool no la sabía xdddd*/
+  inset: 0; 
   background-color: var(--neutral-0);
   transition: .4s;
   border-radius: 20px;
@@ -234,4 +234,88 @@ input[type="checkbox"]:checked::after {
   left: 50%;
   transform: translate(-50%, -55%);
 }
+
+/* Grid*/
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: var(--spacing-300);
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-500) auto;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.job-card {
+  /* background: var(--neutral-0);   Comentado por ahora*/
+  background: rgb(240, 240, 240);
+  border-radius: var(--radius-6);
+  padding: var(--spacing-400) var(--spacing-300) var(--spacing-300);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-150);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards design by dve */
+
+.job-card_logo {
+  position: absolute;
+  top: -25px;
+  left: var(--spacing-300);
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-12);
+  background: rgb(255, 139, 131);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.job-card_logo img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.job-card__meta {
+  font: var(--text-preset-5);
+  color: var(--slate-500);
+  margin-bottom: var(--spacing-200);
+}
+
+.job-card__tittle {
+  font: var(--text-preset-3);
+  margin-bottom: var(--spacing-150);
+}
+
+.job-card__tittle a {
+  color: var(--slate-900);
+  text-decoration: none;
+}
+
+.job-card__tittle a:hover {
+  color: var(--indigo-500);
+}
+
+.job-card__company {
+  font: var(--text-preset-4-regular);
+  color: var(--slate-500);
+  margin-bottom: var(--spacing-200);
+}
+
+.job-card__location {
+  font: var(--text-preset-4-bold);
+  color: var(--indigo-500);
+}
+
 
