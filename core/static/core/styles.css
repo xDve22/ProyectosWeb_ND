@@ -45,6 +45,7 @@
   --spacing-550: 44px;
   --spacing-600: 48px;
   --spacing-700: 56px;
+  --spacing-1000: 80px;
 
   /* Radius */
 
@@ -57,6 +58,9 @@
   --radius-100: 100px;
 }
 
+body{
+  background: var(--slate-100);
+}
 .site-header {
   background: var(--indigo-500);
   padding: var(--spacing-200) 0;
@@ -239,17 +243,18 @@ input[type="checkbox"]:checked::after {
 .job-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  gap: var(--spacing-300);
+  column-gap: var(--spacing-300);
+  row-gap: var(--spacing-700);
   list-style: none;
   padding: 0;
   margin: var(--spacing-500) auto;
   width: 80%;
   max-width: 1200px;
+  margin-top: var(--spacing-1000);
 }
 
 .job-card {
-  /* background: var(--neutral-0);   Comentado por ahora*/
-  background: rgb(240, 240, 240);
+  background:var(--neutral-0);
   border-radius: var(--radius-6);
   padding: var(--spacing-400) var(--spacing-300) var(--spacing-300);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -267,24 +272,17 @@ input[type="checkbox"]:checked::after {
 
 /* Cards design by dve */
 
-.job-card_logo {
+.job-card__logo {
   position: absolute;
   top: -25px;
   left: var(--spacing-300);
   width: 50px;
   height: 50px;
   border-radius: var(--radius-12);
-  background: rgb(255, 139, 131);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.job-card_logo img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
 }
 
 .job-card__meta {
