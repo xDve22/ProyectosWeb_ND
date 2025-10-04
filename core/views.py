@@ -1,9 +1,11 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator
 from .models import JobOffer
 from .forms import JobOfferForm, JobFilterForm
 
+@user_passes_test(lambda u: u.is_staff)
 def job_create(request):
     if request.method == "POST":
         form = JobOfferForm(request.POST, request.FILES) 
