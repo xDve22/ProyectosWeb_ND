@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Job Offers{% endblock %}
+{% load time_filters %}
 
 {% block content %}
 <main>
@@ -12,7 +13,7 @@
       <p><strong>Company:</strong> {{ job.company.name }}</p>
       <p><strong>Type:</strong> {{ job.get_employment_type_display }}</p>
       <p><strong>Location:</strong> {{ job.location }}</p>
-      <p><strong>Posted:</strong> {{ job.created_at|date:"Y-m-d" }}</p>
+      <p><strong>Posted:</strong> {{ job.created_at|short_timesince }}</p>
     </li>
     {% empty %}
     <li>No job offers available.</li>
