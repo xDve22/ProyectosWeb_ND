@@ -8,12 +8,14 @@
 
 {% block content %}
 <h1>New job</h1>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
   {% csrf_token %}
   {{ form.company }}
   {{ form.title }}
   {{ form.location }}
   {{ form.employment_type }}
+  <label for="id_logo">Company logo:</label>
+  {{ form.logo }}
   <!-- Quill editor -->
   <div id="quill-editor" style="height:200px;"></div>
   {{ form.description }}  <!-- hidden input -->

@@ -1,17 +1,26 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator
 from .models import JobOffer
 from .forms import JobOfferForm, JobFilterForm
 
+@user_passes_test(lambda u: u.is_staff)
 def job_create(request):
     if request.method == "POST":
-        form = JobOfferForm(request.POST)
+        form = JobOfferForm(request.POST, request.FILES) 
         if form.is_valid():
-            form.save()
+            job = form.save(commit=False)
+            logo = form.cleaned_data.get("logo")
+            if logo:
+                company = job.company
+                company.logo = logo
+                company.save()
+            job.save()
             return redirect("job_list")
     else:
         form = JobOfferForm()
+
     return render(request, "job_create.html", {"form": form})
 
 def job_list(request):
