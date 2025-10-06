@@ -2,8 +2,15 @@
 
 {% block title %}{{ job.title }}{% endblock %}
 
+{% load static %}
+
 {% block content %}
   <h1>{{ job.title }}</h1>
+  {% if job.company.logo %}
+    <img src="{{ job.company.logo.url }}" alt="{{ job.company.name }}" width="50">
+  {% else %}
+    <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
+  {% endif %}
   <p><strong>Company:</strong> {{ job.company.name }}</p>
   <p><strong>Location:</strong> {{ job.location }}</p>
   <p><strong>Type:</strong> {{ job.employment_type }}</p>
