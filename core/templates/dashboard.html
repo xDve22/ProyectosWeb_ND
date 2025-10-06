@@ -19,7 +19,7 @@
         {% endif %}
       </div>
       <p class="job-card__meta">
-        {{ job.created_at|timesince }} ago • {{ job.get_employment_type_display }}
+        {{ job.created_at|short_timesince }} • {{ job.get_employment_type_display }}
       </p>
 
       <h2 class="job-card__tittle">
