@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Job Offers{% endblock %}
-{% load static %} /*Lo puse temporalmente para cargar los logos*/
+
+{% load static %}
+{% load time_filters %}
+
 {% block content %}
 <main>
   {% include "_job_filters.html" %}
@@ -8,11 +11,13 @@
   <ul class="job-list">
     {% for job in jobs %}
     <li class="job-card">
-      <!-- Codigo LOGO temporal -->
-      <div class="job-card_logo">
-        <img src="{% static 'img/Cocacola.svg' %}" alt="{{ job.company.name}} logo">
+      <div class="job-card__logo"> 
+        {% if job.company.logo %}
+          <img src="{{ job.company.logo.url }}" alt="{{ job.company.name }}" width="50">
+        {% else %}
+          <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
+        {% endif %}
       </div>
-
       <p class="job-card__meta">
         {{ job.created_at|timesince }} ago • {{ job.get_employment_type_display }}
       </p>
@@ -22,15 +27,8 @@
       </h2>
 
       <p class="job-card__company"> {{ job.company.name }}</p>
-
-      <!-- Se elimina para mostrarlo tal cual el diseño -->
-      <!-- <p><strong>Type:</strong> {{ job.get_employment_type_display }}</p> -->
-
       <p class="job-card__location">{{ job.location }}</p>
 
-      <!-- Se elimina por que no esta en el diseño-->  
-      <!-- <p><strong>Posted:</strong> {{ job.created_at|date:"Y-m-d" }}</p> -->
-       
     </li>
     {% empty %}
     <li>No job offers available.</li>
