@@ -1,5 +1,7 @@
 env
 
+media
+
 # Python
 __pycache__/
 *.pyc
