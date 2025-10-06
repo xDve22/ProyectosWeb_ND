@@ -11,4 +11,11 @@
     {{ job.description|safe }}
   </div>
   <p><em>Publicado: {{ job.created_at }}</em></p>
+
+  {% if request.user.is_staff %}
+    <div style="margin-top: 20px;">
+      <a href="{% url 'job_edit' job.pk %}">✏️ Editar</a> |
+      <a href="{% url 'job_delete' job.pk %}" onclick="return confirm('¿Seguro que deseas borrar esta oferta?');">🗑️ Borrar</a>
+    </div>
+  {% endif %}
 {% endblock %}

@@ -23,6 +23,33 @@ def job_create(request):
 
     return render(request, "job_create.html", {"form": form})
 
+@user_passes_test(lambda u: u.is_staff)
+def job_edit(request, pk):
+    job = get_object_or_404(JobOffer, pk=pk)
+    company = job.company
+
+    if request.method == "POST":
+        form = JobOfferForm(request.POST, request.FILES, instance=job)
+
+        if form.is_valid():
+            form.save()
+
+            if "logo" in request.FILES:
+                company.logo = request.FILES["logo"]
+                company.save()
+
+            return redirect("job_detail", pk=job.pk)
+    else:
+        form = JobOfferForm(instance=job)
+
+    return render(request, "job_edit.html", {"form": form, "job": job})
+
+@user_passes_test(lambda u: u.is_staff)
+def job_delete(request, pk):
+    job = get_object_or_404(JobOffer, pk=pk)
+    job.delete()
+    return redirect("job_list")
+
 def job_list(request):
     jobs = JobOffer.objects.select_related("company").order_by("-created_at")
     form = JobFilterForm(request.GET or None)
