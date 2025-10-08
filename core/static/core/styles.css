@@ -242,8 +242,8 @@ input[type="checkbox"]:checked::after {
 /* Grid*/
 .job-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  column-gap: var(--spacing-300);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  column-gap: var(--spacing-400);
   row-gap: var(--spacing-700);
   list-style: none;
   padding: 0;
