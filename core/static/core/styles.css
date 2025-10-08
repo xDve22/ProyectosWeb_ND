@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-:root{
+:root {
   /*Style Color*/
 
   /* Neutral Black and White */
@@ -13,22 +13,22 @@
 
   /* Slate */
   --slate-950: #121721;
-  --slate-900: #19202D;
-  --slate-500: #6E8098;
-  --slate-300: #9DAEC2;
-  --slate-100: #F4F6F8;
+  --slate-900: #19202d;
+  --slate-500: #6e8098;
+  --slate-300: #9daec2;
+  --slate-100: #f4f6f8;
 
   /* Indigo */
-  --indigo-500: #5964E0;
-  --indigo-300: #939BF4;
+  --indigo-500: #5964e0;
+  --indigo-300: #939bf4;
 
   /* Typography */
-  --text-preset-1: bold 28px/125% "Kumbh Sans", sans-serif;
-  --text-preset-2: bold 24px/125% "Kumbh Sans", sans-serif;
-  --text-preset-3: bold 20px/125% "Kumbh Sans", sans-serif;
-  --text-preset-4-bold: bold 16px/125% "Kumbh Sans", sans-serif;
-  --text-preset-4-regular: normal 16px/162.5% "Kumbh Sans", sans-serif;
-  --text-preset-5: bold 14px/120% "Kumbh Sans", sans-serif;
+  --text-preset-1: bold 28px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-2: bold 24px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-3: bold 20px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-4-bold: bold 16px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-4-regular: normal 16px/162.5% 'Kumbh Sans', sans-serif;
+  --text-preset-5: bold 14px/120% 'Kumbh Sans', sans-serif;
 
   /* Spacing */
   --spacing-0: 0;
@@ -58,9 +58,16 @@
   --radius-100: 100px;
 }
 
-body{
+[data-theme="dark"] {
+  --slate-100: var(--slate-950);
+
+  --neutral-0: var(--slate-900);
+}
+
+body {
   background: var(--slate-100);
 }
+
 .site-header {
   background: var(--indigo-500);
   padding: var(--spacing-200) 0;
@@ -73,7 +80,7 @@ body{
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -110,21 +117,21 @@ body{
 .slider {
   position: absolute;
   cursor: pointer;
-  inset: 0; 
+  inset: 0;
   background-color: var(--neutral-0);
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 20px;
 }
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 14px;
   width: 14px;
   left: 3px;
   bottom: 3px;
   background-color: var(--indigo-500);
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
@@ -144,7 +151,7 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: space-between;
   border-radius: var(--radius-6);
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
   padding: var(--spacing-150);
   margin-top: -32px;
   width: 80%;
@@ -208,7 +215,7 @@ input:checked + .slider:before {
   background: var(--indigo-300);
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   appearance: none;
   width: 20px;
   height: 20px;
@@ -220,17 +227,17 @@ input[type="checkbox"] {
   transition: all 0.2s ease-in-out;
 }
 
-input[type="checkbox"]:hover {
+input[type='checkbox']:hover {
   border-color: var(--indigo-500);
 }
 
-input[type="checkbox"]:checked {
+input[type='checkbox']:checked {
   background-color: var(--indigo-500);
   border-color: var(--indigo-500);
 }
 
-input[type="checkbox"]:checked::after {
-  content: "✔";
+input[type='checkbox']:checked::after {
+  content: '✔';
   color: var(--neutral-0);
   font-size: 14px;
   position: absolute;
@@ -254,7 +261,7 @@ input[type="checkbox"]:checked::after {
 }
 
 .job-card {
-  background:var(--neutral-0);
+  background: var(--neutral-0);
   border-radius: var(--radius-6);
   padding: var(--spacing-400) var(--spacing-300) var(--spacing-300);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -315,5 +322,3 @@ input[type="checkbox"]:checked::after {
   font: var(--text-preset-4-bold);
   color: var(--indigo-500);
 }
-
-
