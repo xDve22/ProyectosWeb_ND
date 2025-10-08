@@ -5,24 +5,73 @@
 {% load static %}
 
 {% block content %}
-  <h1>{{ job.title }}</h1>
-  {% if job.company.logo %}
-    <img src="{{ job.company.logo.url }}" alt="{{ job.company.name }}" width="50">
-  {% else %}
-    <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
-  {% endif %}
-  <p><strong>Company:</strong> {{ job.company.name }}</p>
-  <p><strong>Location:</strong> {{ job.location }}</p>
-  <p><strong>Type:</strong> {{ job.employment_type }}</p>
-  <div>
-    {{ job.description|safe }}
-  </div>
-  <p><em>Publicado: {{ job.created_at }}</em></p>
+  <section class="job-detail">
 
-  {% if request.user.is_staff %}
-    <div style="margin-top: 20px;">
-      <a href="{% url 'job_edit' job.pk %}">✏️ Editar</a> |
-      <a href="{% url 'job_delete' job.pk %}" onclick="return confirm('¿Seguro que deseas borrar esta oferta?');">🗑️ Borrar</a>
+    <div class="job-header">
+      <div class="job-header__logo">
+        {% if job.company.logo %}
+          <img src="{{ job.company.logo.url }}" alt="{{ job.company.name }}" width="50">
+        {% else %}
+          <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
+        {% endif %}
+      </div>
+
+      <div class="job-header__info">
+        <h2 class="job-header__company">
+          {{ job.company.name }}
+        </h2>
+        <p class="job-header__website">
+          {{ job.company.website }}
+        </p>
+      </div>
+     
+      <div class="job-header__button">
+        <a href="{{ job.company.website }}" target="_blank" class="btn-company-site">Company Site</a>
+      </div>
     </div>
-  {% endif %}
+
+    <div class="job-body">
+      <div class="job-body__top">
+        <div class="job-body__info">
+          <p class="job-body__meta">
+            {{ job.created_at|timesince }} ago • {{ job.employment_type }}
+          </p>    
+          <h1 class="job-body__tittle">
+            {{ job.title }}
+          </h1>
+          <p class="job-body__location">
+            {{ job.location }}
+          </p>
+        </div>
+        <a href="#" class="btn-apply">
+          Apply Now
+        </a>
+      </div>
+
+      <div class="job-body__description">
+        {{ job.description|safe }}
+      </div>
+
+      {% if request.user.is_staff %}
+        <div class="job-admin">
+          <a href="{% url 'job_edit' job.pk %}" class="btn-edit">
+            ✏️ Editar
+          </a>
+          <a href="{% url 'job_delete' job.pk %}" onclick="return confirm('¿Seguro que deseas borrar esta oferta?');" class="btn-delete">
+            🗑️ Borrar
+          </a>
+        </div>
+       {% endif %} 
+    </div>
+  </section>
+  <!-- <footer class="job-footer">
+    <div class="job-footer__content">
+      <div class="job-footer__info">
+        <h3 class="job-footer__title">{{ job.title }}</h3>
+        <p class="job-footer__company">{{ job.company.name }}</p>
+      </div>
+      <a href="#" class="btn-apply">Apply Now</a>
+    </div>
+  </footer> -->
+
 {% endblock %}
