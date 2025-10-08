@@ -277,8 +277,6 @@ input[type='checkbox']:checked::after {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Cards design by dve */
-
 .job-card__logo {
   position: absolute;
   top: -25px;
@@ -322,3 +320,53 @@ input[type='checkbox']:checked::after {
   font: var(--text-preset-4-bold);
   color: var(--indigo-500);
 }
+
+.button-mobile, .search__form--filter{
+  display: none;
+}
+
+@media (max-width: 728px) {
+
+  .search-form{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-desktop, .button-desktop, .search-form__checkbox, .search-form__field--location{
+    display: none;
+  }
+  
+  .search-form__field--title {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 65%;
+    padding: 0 var(--spacing-150);
+  }
+
+  .button-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5964e0;
+    border: none;
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+  }
+
+  .button-mobile img {
+    width: 20px;
+    height: 20px;
+    color: var(--neutral-0);
+  }
+
+  .search__form--filter{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+  }
+}
+
+
