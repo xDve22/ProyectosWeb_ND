@@ -65,12 +65,15 @@
 
   --neutral-0: var(--slate-900);
 }
-
+html{
+  height: calc(120px -100% );
+}
 body {
   background: var(--slate-100);
   display: flex;
   flex-direction: column;
   align-content: space-around;
+  height: 100%;
 }
 
 .site-header {
