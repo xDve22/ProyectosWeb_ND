@@ -4,46 +4,297 @@
     "pk": 1,
     "fields": {
       "name": "OpenAI",
-      "description": "AI Research Company",
+      "description": "OpenAI is a San Francisco-based research organization focused on advancing artificial general intelligence (AGI) safely and responsibly. The company develops AI technologies such as GPT and DALL·E, collaborating with global partners to push the boundaries of creativity, automation, and machine reasoning.",
       "website": "https://openai.com"
     }
   },
+  {
+    "model": "core.company",
+    "pk": 2,
+    "fields": {
+      "name": "NeuraForge Technologies",
+      "description": "NeuraForge Technologies is a European AI company specializing in computer vision and autonomous inspection systems for industrial manufacturing. Their mission is to automate quality control processes using smart cameras, neural networks, and real-time analytics.",
+      "website": "https://neuraforge.tech"
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 3,
+    "fields": {
+      "name": "Atlas Cloud Systems",
+      "description": "Atlas Cloud Systems is a Canadian cloud infrastructure provider helping startups and enterprises migrate, optimize, and scale their services securely on AWS, Azure, and Google Cloud. They focus on DevOps, automation, and real-time observability.",
+      "website": "https://atlascloudsystems.io"
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 4,
+    "fields": {
+      "name": "QuantumEdge Robotics",
+      "description": "QuantumEdge Robotics, based in Tokyo, develops advanced robotics powered by machine learning and 3D computer vision. Their robots assist in healthcare, logistics, and industrial inspection, integrating artificial intelligence directly into mechanical systems.",
+      "website": "https://quantumedge.co.jp"
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 5,
+    "fields": {
+      "name": "Lumen DataWorks",
+      "description": "Lumen DataWorks is a Berlin-based data analytics and AI consulting firm focused on predictive modeling, energy analytics, and business intelligence for financial and energy sectors. They empower organizations through data-driven insights and automation.",
+      "website": "https://lumendataworks.eu"
+    }
+  },
 
-  { "model": "core.joboffer", "pk": 1, "fields": { "company": 1, "title": "Senior Software Engineer", "description": "Exciting opportunity for a senior software engineer!", "location": "United Kingdom", "employment_type": "FT", "created_at": "2025-09-30T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 2, "fields": { "company": 1, "title": "Haskell and PureScript Dev", "description": "Join our team as a Haskell and PureScript developer.", "location": "United States", "employment_type": "PT", "created_at": "2025-09-29T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 3, "fields": { "company": 1, "title": "Midlevel Back End Engineer", "description": "Looking for a midlevel backend engineer with solid experience.", "location": "Russia", "employment_type": "PT", "created_at": "2025-09-29T10:00:00Z" }},
-  { "model": "core.joboffer", "pk": 4, "fields": { "company": 1, "title": "Senior Application Engineer", "description": "Seeking a senior application engineer for international projects.", "location": "Japan", "employment_type": "FT", "created_at": "2025-09-28T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 5, "fields": { "company": 1, "title": "Remote DevOps Engineer", "description": "Work remotely as a DevOps engineer.", "location": "Thailand", "employment_type": "PT", "created_at": "2025-09-28T08:00:00Z" }},
-  { "model": "core.joboffer", "pk": 6, "fields": { "company": 1, "title": "Desktop Support Manager", "description": "We are looking for a desktop support manager.", "location": "Germany", "employment_type": "PT", "created_at": "2025-09-26T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 7, "fields": { "company": 1, "title": "iOS Engineer", "description": "Hiring an iOS engineer to build great apps.", "location": "United States", "employment_type": "FT", "created_at": "2025-09-24T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 8, "fields": { "company": 1, "title": "Senior EJB Developer", "description": "Seeking an experienced EJB developer for backend solutions.", "location": "United Kingdom", "employment_type": "FT", "created_at": "2025-09-24T10:00:00Z" }},
-  
-  { "model": "core.joboffer", "pk": 9, "fields": { "company": 1, "title": "Python Developer 1", "description": "We are hiring Python devs.", "location": "Canada", "employment_type": "FT", "created_at": "2025-09-23T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 10, "fields": { "company": 1, "title": "Python Developer 2", "description": "We are hiring Python devs.", "location": "Brazil", "employment_type": "PT", "created_at": "2025-09-23T10:00:00Z" }},
-  { "model": "core.joboffer", "pk": 11, "fields": { "company": 1, "title": "Python Developer 3", "description": "We are hiring Python devs.", "location": "France", "employment_type": "FT", "created_at": "2025-09-22T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 12, "fields": { "company": 1, "title": "Python Developer 4", "description": "We are hiring Python devs.", "location": "Spain", "employment_type": "FT", "created_at": "2025-09-21T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 13, "fields": { "company": 1, "title": "Python Developer 5", "description": "We are hiring Python devs.", "location": "Italy", "employment_type": "PT", "created_at": "2025-09-20T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 14, "fields": { "company": 1, "title": "Python Developer 6", "description": "We are hiring Python devs.", "location": "Mexico", "employment_type": "FT", "created_at": "2025-09-19T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 15, "fields": { "company": 1, "title": "Python Developer 7", "description": "We are hiring Python devs.", "location": "Chile", "employment_type": "PT", "created_at": "2025-09-18T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 16, "fields": { "company": 1, "title": "Python Developer 8", "description": "We are hiring Python devs.", "location": "Argentina", "employment_type": "FT", "created_at": "2025-09-17T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 17, "fields": { "company": 1, "title": "Python Developer 9", "description": "We are hiring Python devs.", "location": "Colombia", "employment_type": "FT", "created_at": "2025-09-16T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 18, "fields": { "company": 1, "title": "Python Developer 10", "description": "We are hiring Python devs.", "location": "Peru", "employment_type": "PT", "created_at": "2025-09-15T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 19, "fields": { "company": 1, "title": "Python Developer 11", "description": "We are hiring Python devs.", "location": "India", "employment_type": "FT", "created_at": "2025-09-14T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 20, "fields": { "company": 1, "title": "Python Developer 12", "description": "We are hiring Python devs.", "location": "China", "employment_type": "FT", "created_at": "2025-09-13T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 21, "fields": { "company": 1, "title": "Python Developer 13", "description": "We are hiring Python devs.", "location": "South Korea", "employment_type": "PT", "created_at": "2025-09-12T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 22, "fields": { "company": 1, "title": "Python Developer 14", "description": "We are hiring Python devs.", "location": "Australia", "employment_type": "FT", "created_at": "2025-09-11T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 23, "fields": { "company": 1, "title": "Python Developer 15", "description": "We are hiring Python devs.", "location": "South Africa", "employment_type": "PT", "created_at": "2025-09-10T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 24, "fields": { "company": 1, "title": "Python Developer 16", "description": "We are hiring Python devs.", "location": "Egypt", "employment_type": "FT", "created_at": "2025-09-09T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 25, "fields": { "company": 1, "title": "Python Developer 17", "description": "We are hiring Python devs.", "location": "Turkey", "employment_type": "FT", "created_at": "2025-09-08T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 26, "fields": { "company": 1, "title": "Python Developer 18", "description": "We are hiring Python devs.", "location": "Poland", "employment_type": "PT", "created_at": "2025-09-07T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 27, "fields": { "company": 1, "title": "Python Developer 19", "description": "We are hiring Python devs.", "location": "Norway", "employment_type": "FT", "created_at": "2025-09-06T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 28, "fields": { "company": 1, "title": "Python Developer 20", "description": "We are hiring Python devs.", "location": "Sweden", "employment_type": "FT", "created_at": "2025-09-05T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 29, "fields": { "company": 1, "title": "Python Developer 21", "description": "We are hiring Python devs.", "location": "Finland", "employment_type": "PT", "created_at": "2025-09-04T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 30, "fields": { "company": 1, "title": "Python Developer 22", "description": "We are hiring Python devs.", "location": "Denmark", "employment_type": "FT", "created_at": "2025-09-03T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 31, "fields": { "company": 1, "title": "Python Developer 23", "description": "We are hiring Python devs.", "location": "Ireland", "employment_type": "FT", "created_at": "2025-09-02T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 32, "fields": { "company": 1, "title": "Python Developer 24", "description": "We are hiring Python devs.", "location": "Portugal", "employment_type": "PT", "created_at": "2025-09-01T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 33, "fields": { "company": 1, "title": "Python Developer 25", "description": "We are hiring Python devs.", "location": "Switzerland", "employment_type": "FT", "created_at": "2025-08-31T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 34, "fields": { "company": 1, "title": "Python Developer 26", "description": "We are hiring Python devs.", "location": "Austria", "employment_type": "FT", "created_at": "2025-08-30T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 35, "fields": { "company": 1, "title": "Python Developer 27", "description": "We are hiring Python devs.", "location": "Belgium", "employment_type": "PT", "created_at": "2025-08-29T12:00:00Z" }},
-  { "model": "core.joboffer", "pk": 36, "fields": { "company": 1, "title": "Python Developer 28", "description": "We are hiring Python devs.", "location": "Netherlands", "employment_type": "FT", "created_at": "2025-08-28T12:00:00Z" }}
+  {
+    "model": "core.joboffer",
+    "pk": 1,
+    "fields": {
+      "company": 1,
+      "title": "Senior Software Engineer",
+      "description": "<h1>Senior Software Engineer</h1><p>We are seeking a highly skilled engineer to develop and optimize large-scale AI systems. You will collaborate with researchers and product teams to build efficient, reliable, and safe infrastructures that support models used by millions worldwide.</p><h2>Responsibilities</h2><ul><li>Design distributed architectures for high-performance machine learning.</li><li>Contribute to code reviews and cross-team technical decisions.</li><li>Ensure scalable deployment in cloud environments.</li></ul><p>Learn more at <a href='https://openai.com/careers'>openai.com/careers</a>.</p>",
+      "location": "United Kingdom",
+      "employment_type": "FT",
+      "created_at": "2025-09-30T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.joboffer",
+    "pk": 2,
+    "fields": {
+      "company": 2,
+      "title": "Computer Vision Engineer",
+      "description": "<h1>Computer Vision Engineer</h1><p>Join NeuraForge Technologies to design next-generation visual inspection systems for industrial automation. Your work will directly impact product quality in automotive and aerospace manufacturing through deep learning and computer vision.</p><h2>Key Skills</h2><ul><li>Proficiency in Python, PyTorch, and OpenCV.</li><li>Experience in model optimization for embedded devices.</li><li>Understanding of object detection and segmentation pipelines.</li></ul><p>More info at <a href='https://neuraforge.tech/careers'>neuraforge.tech</a>.</p>",
+      "location": "Germany",
+      "employment_type": "FT",
+      "created_at": "2025-09-29T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.joboffer",
+    "pk": 3,
+    "fields": {
+      "company": 3,
+      "title": "Cloud Architect",
+      "description": "<h1>Cloud Architect</h1><p>Atlas Cloud Systems is looking for an experienced Cloud Architect to help design scalable, secure, and efficient infrastructures. You will collaborate with DevOps and engineering teams to build automation tools and improve CI/CD pipelines.</p><h2>What You'll Do</h2><ul><li>Design hybrid and multi-cloud architectures.</li><li>Implement observability with Prometheus and Grafana.</li><li>Mentor DevOps engineers and improve cloud cost efficiency.</li></ul><p>Visit <a href='https://atlascloudsystems.io/jobs'>atlascloudsystems.io/jobs</a> to apply.</p>",
+      "location": "Canada",
+      "employment_type": "FT",
+      "created_at": "2025-09-27T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.joboffer",
+    "pk": 4,
+    "fields": {
+      "company": 4,
+      "title": "Robotics Software Engineer",
+      "description": "<h1>Robotics Software Engineer</h1><p>At QuantumEdge Robotics, we are pushing the limits of robotics and AI. You'll work on integrating perception, navigation, and motion planning algorithms into our autonomous robots designed for hospital and industrial use.</p><h2>Requirements</h2><ul><li>Strong skills in C++, Python, and ROS2.</li><li>Experience with LiDAR and 3D vision systems.</li><li>Background in control systems and embedded software.</li></ul><p>Read more at <a href='https://quantumedge.co.jp/careers'>quantumedge.co.jp</a>.</p>",
+      "location": "Japan",
+      "employment_type": "FT",
+      "created_at": "2025-09-26T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.joboffer",
+    "pk": 5,
+    "fields": {
+      "company": 5,
+      "title": "Data Scientist",
+      "description": "<h1>Data Scientist</h1><p>Lumen DataWorks seeks a Data Scientist to help clients uncover actionable insights through data-driven strategies. You’ll work with international banking and energy corporations to develop predictive models and interactive dashboards.</p><h2>What You'll Bring</h2><ul><li>Experience in Python, SQL, and Power BI.</li><li>Familiarity with financial data and risk modeling.</li><li>Strong communication and storytelling through data.</li></ul><p>Apply at <a href='https://lumendataworks.eu/jobs'>lumendataworks.eu</a>.</p>",
+      "location": "Germany",
+      "employment_type": "FT",
+      "created_at": "2025-09-25T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 6,
+    "fields": {
+      "company": 1,
+      "title": "Prompt Engineer",
+      "description": "<h1>Prompt Engineer</h1><p>Join OpenAI’s applied AI team and help design powerful prompt strategies for generative language models. You’ll test, evaluate, and improve prompts used across millions of users daily, helping systems produce accurate, human-aligned results.</p><h2>Preferred Background</h2><ul><li>Excellent written communication and creative thinking.</li><li>Experience in linguistics, cognitive science, or UX writing.</li><li>Ability to prototype prompt pipelines programmatically.</li></ul><p>Learn more at <a href='https://openai.com/careers'>openai.com/careers</a>.</p>",
+      "location": "United States",
+      "employment_type": "FT",
+      "created_at": "2025-09-24T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 7,
+    "fields": {
+      "company": 2,
+      "title": "Deep Learning Researcher",
+      "description": "<h1>Deep Learning Researcher</h1><p>As part of the NeuraForge research team, you’ll experiment with transformer architectures and generative diffusion models applied to industrial datasets. You’ll collaborate closely with PhDs in AI and robotics to advance edge intelligence.</p><h2>Tasks</h2><ul><li>Conduct experiments with multimodal learning systems.</li><li>Publish results in top AI conferences.</li><li>Prototype and deploy research into production.</li></ul>",
+      "location": "Netherlands",
+      "employment_type": "FT",
+      "created_at": "2025-09-22T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.joboffer",
+    "pk": 8,
+    "fields": {
+      "company": 3,
+      "title": "DevOps Engineer",
+      "description": "<h1>DevOps Engineer</h1><p>We are hiring an experienced DevOps Engineer at Atlas Cloud Systems to help maintain our scalable cloud environments. You’ll improve automation processes, CI/CD, and infrastructure resilience using modern DevOps practices.</p><h2>Tech Stack</h2><ul><li>Terraform, Docker, Kubernetes</li><li>Jenkins and GitHub Actions</li><li>Monitoring with Prometheus and Grafana</li></ul><p>Details at <a href='https://atlascloudsystems.io/devops'>atlascloudsystems.io</a>.</p>",
+      "location": "Brazil",
+      "employment_type": "FT",
+      "created_at": "2025-09-21T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.joboffer",
+    "pk": 9,
+    "fields": {
+      "company": 4,
+      "title": "AI Robotics Researcher",
+      "description": "<h1>AI Robotics Researcher</h1><p>QuantumEdge Robotics is hiring an AI researcher to explore advanced human-robot collaboration systems. This role involves developing reinforcement learning algorithms and simulation environments for robotic task learning.</p><h2>Responsibilities</h2><ul><li>Develop and evaluate novel RL algorithms.</li><li>Collaborate with control engineers on hardware integration.</li><li>Publish research and mentor junior scientists.</li></ul>",
+      "location": "Japan",
+      "employment_type": "FT",
+      "created_at": "2025-09-20T12:00:00Z"
+    }
+  },
+  {
+    "model": "core.joboffer",
+    "pk": 10,
+    "fields": {
+      "company": 5,
+      "title": "Business Intelligence Analyst",
+      "description": "<h1>Business Intelligence Analyst</h1><p>Lumen DataWorks is seeking an analytical professional to design data pipelines and executive dashboards for corporate decision-making. You will play a crucial role in translating KPIs into actionable insights.</p><h2>Requirements</h2><ul><li>Advanced SQL knowledge and dashboard design experience.</li><li>Background in finance or energy markets is a plus.</li><li>Ability to collaborate across departments with stakeholders.</li></ul>",
+      "location": "Spain",
+      "employment_type": "FT",
+      "created_at": "2025-09-19T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 11,
+    "fields": {
+      "company": 1,
+      "title": "Machine Learning Engineer",
+      "description": "<h1>Machine Learning Engineer</h1><p>OpenAI seeks engineers passionate about scaling cutting-edge models for real-world applications. You will work on optimizing model training pipelines and ensuring reliability in large-scale deployments.</p><h2>Stack</h2><ul><li>Python, CUDA, TensorFlow, PyTorch</li><li>Data processing with Spark and Ray</li><li>Experience with distributed training systems</li></ul>",
+      "location": "United States",
+      "employment_type": "FT",
+      "created_at": "2025-09-18T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 12,
+    "fields": {
+      "company": 2,
+      "title": "Edge AI Developer",
+      "description": "<h1>Edge AI Developer</h1><p>Develop embedded AI models that run efficiently on edge devices for real-time manufacturing systems. You’ll optimize inference performance while maintaining accuracy under hardware constraints.</p><h2>Preferred</h2><ul><li>Experience in ONNX Runtime or TensorRT</li><li>Strong understanding of C++ optimization</li><li>Comfortable working with IoT platforms</li></ul>",
+      "location": "France",
+      "employment_type": "FT",
+      "created_at": "2025-09-17T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 13,
+    "fields": {
+      "company": 3,
+      "title": "Site Reliability Engineer",
+      "description": "<h1>Site Reliability Engineer</h1><p>Atlas Cloud Systems needs an SRE to improve reliability and observability of our distributed systems. You will automate deployments, manage incidents, and build robust monitoring infrastructure.</p><h2>Expectations</h2><ul><li>Strong background in Python and Bash scripting.</li><li>Experience in observability tools and incident management.</li><li>Focus on high availability and scalability.</li></ul>",
+      "location": "Canada",
+      "employment_type": "FT",
+      "created_at": "2025-09-16T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 14,
+    "fields": {
+      "company": 4,
+      "title": "Embedded Systems Engineer",
+      "description": "<h1>Embedded Systems Engineer</h1><p>QuantumEdge Robotics is looking for an embedded systems engineer to design real-time firmware for autonomous machines. You'll collaborate closely with roboticists and hardware designers.</p><h2>Skills</h2><ul><li>C/C++ and RTOS development</li><li>Experience with ARM-based architectures</li><li>Knowledge of CAN and SPI protocols</li></ul>",
+      "location": "Japan",
+      "employment_type": "FT",
+      "created_at": "2025-09-15T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 15,
+    "fields": {
+      "company": 5,
+      "title": "AI Policy Analyst",
+      "description": "<h1>AI Policy Analyst</h1><p>Join Lumen DataWorks to research and develop ethical frameworks for responsible AI adoption in Europe. This position requires analyzing regulatory trends and creating data governance recommendations.</p><h2>Responsibilities</h2><ul><li>Study EU AI regulations and compliance frameworks.</li><li>Collaborate with legal and engineering teams.</li><li>Prepare white papers and client reports.</li></ul>",
+      "location": "Germany",
+      "employment_type": "PT",
+      "created_at": "2025-09-14T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 16,
+    "fields": {
+      "company": 1,
+      "title": "AI Ethics Researcher",
+      "description": "<h1>AI Ethics Researcher</h1><p>OpenAI is looking for a researcher to explore fairness, transparency, and accountability in large-scale AI models. You'll evaluate model behavior and propose solutions for safer deployment.</p><h2>Qualifications</h2><ul><li>Background in social science or philosophy of technology.</li><li>Strong analytical and writing skills.</li><li>Experience with qualitative and quantitative research.</li></ul>",
+      "location": "United States",
+      "employment_type": "FT",
+      "created_at": "2025-09-13T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 17,
+    "fields": {
+      "company": 3,
+      "title": "Technical Writer",
+      "description": "<h1>Technical Writer</h1><p>Atlas Cloud Systems is hiring a Technical Writer to document APIs, infrastructure workflows, and internal tools. You'll work closely with developers and product teams to produce clear, concise documentation.</p><h2>Requirements</h2><ul><li>Excellent English communication skills.</li><li>Experience writing developer documentation.</li><li>Basic familiarity with Markdown and OpenAPI specs.</li></ul>",
+      "location": "Remote",
+      "employment_type": "PT",
+      "created_at": "2025-09-12T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 18,
+    "fields": {
+      "company": 4,
+      "title": "Hardware Design Engineer",
+      "description": "<h1>Hardware Design Engineer</h1><p>Work with QuantumEdge Robotics’ hardware division to design high-performance circuits for robotics systems. You'll be part of a cross-functional team ensuring quality, precision, and energy efficiency.</p><h2>Tools</h2><ul><li>Experience with Altium Designer and PCB prototyping</li><li>Knowledge of embedded electronics testing</li><li>Team collaboration in agile environments</li></ul>",
+      "location": "Japan",
+      "employment_type": "FT",
+      "created_at": "2025-09-11T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 19,
+    "fields": {
+      "company": 2,
+      "title": "AI Product Manager",
+      "description": "<h1>AI Product Manager</h1><p>NeuraForge Technologies is seeking an experienced Product Manager to lead AI product strategy and ensure smooth coordination between research, engineering, and business teams.</p><h2>Skills</h2><ul><li>Strong understanding of ML lifecycle.</li><li>Excellent stakeholder management.</li><li>Experience delivering AI-driven products.</li></ul>",
+      "location": "Netherlands",
+      "employment_type": "FT",
+      "created_at": "2025-09-10T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "core.joboffer",
+    "pk": 20,
+    "fields": {
+      "company": 5,
+      "title": "Data Engineer",
+      "description": "<h1>Data Engineer</h1><p>Lumen DataWorks seeks a Data Engineer to build and maintain data pipelines using modern cloud technologies. You will design ETL workflows and optimize storage for analytics teams.</p><h2>Required Skills</h2><ul><li>Proficiency in Python, Airflow, and SQL.</li><li>Experience with AWS Glue or Databricks.</li><li>Knowledge of data lake architectures.</li></ul>",
+      "location": "Germany",
+      "employment_type": "FT",
+      "created_at": "2025-09-09T12:00:00Z"
+    }
+  }
 ]

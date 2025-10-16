@@ -1,6 +1,8 @@
 env
 
 media
+.env
+backup.json
 
 # Python
 __pycache__/
