@@ -10,7 +10,7 @@
     <div class="job-header">
       <div class="job-header__logo">
         {% if job.company.logo %}
-          <img src="{{ job.company.logo.url }}" alt="{{ job.company.name }}" width="50">
+          <img src="{{ job.company.logo }}" alt="{{ job.company.name }}" width="50">
         {% else %}
           <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
         {% endif %}

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+from imagekitio import ImageKit
 import os
 import dj_database_url
 
@@ -26,6 +27,13 @@ MEDIA_ROOT = BASE_DIR / "media"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# Image kit
+IMAGEKIT = ImageKit(
+    private_key=os.getenv("IMAGEKIT_PRIVATE_KEY"),
+    public_key=os.getenv("IMAGEKIT_PUBLIC_KEY"),
+    url_endpoint=os.getenv("IMAGEKIT_URL_ENDPOINT")
+)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -36,6 +44,21 @@ SECRET_KEY = 'django-insecure-0(28i@#&a4r%l(3x@x%ya+-)x4t1i15nu_y3kujw)vgnl0caxy
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
 
 
 # Application definition

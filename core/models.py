@@ -4,7 +4,7 @@ class Company(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     website = models.URLField(blank=True, null=True)
-    logo = models.ImageField(upload_to="company_logos/", blank=True, null=True)
+    logo = models.URLField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.name

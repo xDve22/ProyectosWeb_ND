@@ -28,6 +28,14 @@
     </header>
         
     {% block content %}{% endblock %}
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
     {% if debug %}
         <script src="{% url 'django_browser_reload:reload' %}"></script>
     {% endif %}
