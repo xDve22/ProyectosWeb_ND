@@ -1,20 +1,31 @@
 {% load static %}
 
 <form method="get" class="search-form">
-  <div class="search-form__field">
-    <img src="{% static 'icons/icon-search.svg' %}" alt="Search">
+
+  <div class="search-form__field search-form__field--title">
+    <img src="{% static 'icons/icon-search.svg' %}" alt="Search" class="icon-desktop">
     {{ form.title_or_company }}
   </div>
 
-  <div class="search-form__field">
+  <div class="search-form__field search-form__field--location">
     <img src="{% static 'icons/icon-ubication.svg' %}" alt="Location">
     {{ form.location }}
   </div>
+
+  <img class="search__form--filter" src="{% static 'icons/icon-filter.svg' %}" alt="Filter">
 
   <div class="search-form__checkbox">
     {{ form.full_time_only }} {{ form.full_time_only.label_tag }}
   </div>
 
-  <button type="submit" class="search-form__button">Search</button>
+  <button type="submit" class="search-form__button button-desktop">Search</button>
+
+  <button type="submit" class="search-form__button button-mobile">
+    <img src="{% static 'icons/icon-search-white.svg' %}" alt="Search icon">
+  </button>
+  
 </form>
+
+
+
 

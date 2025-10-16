@@ -18,7 +18,7 @@
           <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
         {% endif %}
       </div>
-      <p class="job-card__meta">
+      <p class="job-card__time">
         {{ job.created_at|short_timesince }} • {{ job.get_employment_type_display }}
       </p>
 
@@ -36,14 +36,14 @@
   </ul>
 
   {% if has_next %}
-    <form method="get">
+    <form class="form-load" method="get">
       {% for key, value in request.GET.items %}
         {% if key != 'page' %}
           <input type="hidden" name="{{ key }}" value="{{ value }}">
         {% endif %}
       {% endfor %}
       <input type="hidden" name="page" value="{{ page|add:1 }}">
-      <button type="submit">Load more</button>
+      <button class="btn-load" type="submit">Load more</button>
     </form>
   {% endif %}
 </main>
