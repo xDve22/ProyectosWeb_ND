@@ -449,7 +449,7 @@ input[type='checkbox']:checked::after {
   color: var(--slate-500);
 }
 
-.job-body__description h2{
+.job-body__description h1, h2{
   font: var(--text-preset-3);
   color: var(--slate-900);
   margin-top: 1.5em;
