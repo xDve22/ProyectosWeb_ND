@@ -67,8 +67,10 @@
 }
 
 body {
-  background: yellow;
-  height: 100vh;
+  background: var(--slate-100);
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
 }
 
 .site-header {
@@ -80,11 +82,11 @@ body {
   height: 120px;
   border-bottom-left-radius: var(--radius-100);
   overflow: hidden;
+  width: 100%;
 }
 
 .site-header__container {
   width: 80%;
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -263,20 +265,24 @@ input[type='checkbox']:checked::after {
   padding: 0;
   margin: var(--spacing-500) auto;
   width: 80%;
-  max-width: 1200px;
   margin-top: var(--spacing-1000);
 }
 
 .job-card {
   background: var(--neutral-0);
   border-radius: var(--radius-6);
-  padding: var(--spacing-400) var(--spacing-300) var(--spacing-300);
+  padding: 50px 25px  15px 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-150);
+  justify-content: center;
+  gap: var(--spacing-075);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  max-height: 250px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-overflow: ellipsis;
 }
 
 .job-card:hover {
@@ -291,9 +297,6 @@ input[type='checkbox']:checked::after {
   width: 50px;
   height: 50px;
   border-radius: var(--radius-12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
@@ -303,15 +306,17 @@ input[type='checkbox']:checked::after {
   object-fit: cover;
 }
 
-.job-card__meta {
+.job-card__time {
   font: var(--text-preset-5);
   color: var(--slate-500);
-  margin-bottom: var(--spacing-200);
 }
 
 .job-card__tittle {
   font: var(--text-preset-3);
-  margin-bottom: var(--spacing-150);
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;      
+  text-overflow: ellipsis; 
 }
 
 .job-card__tittle a {
@@ -326,7 +331,7 @@ input[type='checkbox']:checked::after {
 .job-card__company {
   font: var(--text-preset-4-regular);
   color: var(--slate-500);
-  margin-bottom: var(--spacing-200);
+  margin-bottom: var(--spacing-300);
 }
 
 .job-card__location {
@@ -344,10 +349,11 @@ input[type='checkbox']:checked::after {
 .job-detail {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 20%;
+  align-items: center;  
+  width: 60%;
+  height: fit-content;
+  margin: 0 auto;
   row-gap: var(--spacing-400);
-  height: calc(100% - 120px);
 }
 
 .job-header {
@@ -363,10 +369,7 @@ input[type='checkbox']:checked::after {
 
 .job-header__logo {
   width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 120px; 
 }
 
 .job-header__logo img {
@@ -399,7 +402,7 @@ input[type='checkbox']:checked::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 220px;
+  width: 200px;
 }
 
 .btn-company-site {
@@ -407,8 +410,8 @@ input[type='checkbox']:checked::after {
   color: var(--indigo-500);
   font: var(--text-preset-4-bold);
   text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 6px;
+  padding: var(--spacing-125) var(--spacing-200);
+  border-radius: var(--radius-6);
 }
 
 .btn-company-site:hover {
@@ -416,29 +419,58 @@ input[type='checkbox']:checked::after {
 }
 
 .job-body {
-  background: rgb(247, 199, 199);
+  background: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: fit-content;
   width: 100%;
-  height: 100%;
+  min-height: 500px;
   border-radius: var(--radius-6);
+  flex: 1;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 .job-body__description {
-  padding: 2em;
+  padding: 1em 2em;
   height: 100%;
+  text-decoration: none;
+  list-style-position: inside;
+  line-height: 1.6;
+  flex: 1;   
 }
 
-.job-footer {
-  display: flex;
-  background-color: rebeccapurple;
+.job-body__description {
+  font: var(--text-preset-4-regular);
+  color: var(--slate-500);
+}
+
+.job-body__description h2{
+  font: var(--text-preset-3);
+  color: var(--slate-900);
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1.3;
+}
+
+.job-body__description ol, ul{
+  margin: 2em 0; 
+  font: var(--text-preset-4-regular);
+  color: var(--slate-500);
+}
+
+.job-body__description li::marker{
+  color: var(--indigo-500);
 }
 
 .job-body__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--neutral-0);
   padding: var(--spacing-400);
+  width: 100%;
+  height: 140px;
 }
 
 .job-body__info {
@@ -454,11 +486,11 @@ input[type='checkbox']:checked::after {
 
 .job-body__tittle {
   font: var(--text-preset-1);
-  color: var(--slate-950);
+  color: var(--slate-900);
 }
 
 .job-body__location {
-  font: var(--text-preset-4-bold);
+  font: var(--text-preset-5);
   color: var(--indigo-500);
 }
 
@@ -476,10 +508,102 @@ input[type='checkbox']:checked::after {
   background-color: var(--indigo-300);
 }
 
+.job-admin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: var(--spacing-700);
+  margin-bottom: var(--spacing-550);
+  height: var(--spacing-600);
+}
+
+.job-admin a{
+  background: var(--slate-50);
+  color: var(--indigo-300);
+  font: var(--text-preset-4-bold);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+}
+
+.job-admin a:hover{
+  background: var(--slate-25);
+}
+
+
+.job-footer {
+  background: var(--neutral-0);
+  margin-top: auto;
+  width: 100%;
+}
+
+
+.job-footer__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--spacing-400);
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+.job-footer__title{
+  font: var(--text-preset-3);
+  color: var(--slate-900);
+}
+
+.job-footer__company{
+  font: var(--text-preset-4-regular);
+  color: var(--slate-500);
+}
+
+.form-load{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-load{
+  background-color: var(--indigo-500);
+  color: var(--neutral-0);
+  font: var(--text-preset-4-bold);
+  border: none;
+  border-radius: var(--radius-6);
+  padding: var(--spacing-150) var(--spacing-400);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin: var(--spacing-500) 0;
+}
+
+.btn-load:hover{
+  background-color: var(--indigo-300);
+}
+
+@media (max-width: 900px){
+  
+  .job-detail{
+    width: 90%;
+  }
+
+  .job-footer__container{
+    width: 100%;
+  }
+}
+
 @media (max-width: 728px) {
-  .search-form {
+
+  .site-header{
+    border-bottom-left-radius: var(--radius-0);
+  }
+
+  .search-form, .site-header__container{
     display: flex;
     justify-content: space-between;
+    width: 90%;
+  }
+  .job-list{
+    width: 90%;
   }
 
   .icon-desktop,
@@ -518,6 +642,87 @@ input[type='checkbox']:checked::after {
     display: block;
     width: 20px;
     height: 20px;
-    margin: 5px;
   }
+
+  .job-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+    row-gap: var(--spacing-400);
+  }
+
+  .job-footer__info{
+    display: none;
+  }
+
+  .btn-apply{
+    width: 100%;
+    text-align: center;
+  }
+
+  .job-body__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-400);
+    width: 100%;
+    height: auto;
+    gap: 2.5rem;
+  }
+
+  .job-body__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: var(--spacing-100);
+  }
+
+  .job-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: var(--neutral-0);
+    border-radius: var(--radius-6);
+    margin-top: -15px;
+    height: auto;
+    width: 100%;
+    overflow: visible;
+    padding: 2.5rem;
+    gap: 1rem;
+  }
+
+  .job-header__info{
+    text-align: center;
+  }
+
+  .job-header__logo {
+    position: absolute;
+    border-radius: var(--radius-16); 
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    overflow: visible;
+  }
+
+  .job-header__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-16); 
+  }
+
+  .job-body__tittle {
+    font: var(--text-preset-3);
+  }
+
+
+  
+
+
 }
