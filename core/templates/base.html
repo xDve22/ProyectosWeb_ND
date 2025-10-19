@@ -13,16 +13,28 @@
     <header class="site-header">
       <div class="site-header__container">
         <a href="/" class="site-header__logo">devjobs</a>
-        <div class="site-header__toggle">
-          <img src="{% static 'icons/icon-sun.svg' %}" alt="Light Mode" class="icon">
+        
+        <div class="site-header__actions">
+          <!-- Theme Toggle -->
+          <div class="site-header__toggle">
+            <img src="{% static 'icons/icon-sun.svg' %}" alt="Light Mode" class="icon">
+            <label class="switch">
+              <input type="checkbox" id="theme-toggles">
+              <span class="slider round"></span>
+            </label>
+            <img src="{% static 'icons/icon-moon.svg' %}" alt="Dark Mode" class="icon">
+          </div>
 
-          <label class="switch">
-            <input type="checkbox" id="theme-toggles">
-            <span class="slider round"></span>
-          </label>
-
-          <img src="{% static 'icons/icon-moon.svg' %}" alt="Dark Mode" class="icon">
-
+          <!-- Auth Buttons -->
+          <div class="site-header__auth">
+            {% if user.is_authenticated %}
+              <span class="auth-greeting">Hello, {{ user.username }}!</span>
+              <a href="{% url 'accounts:logout' %}" class="btn btn-outline">Logout</a>
+            {% else %}
+              <a href="{% url 'accounts:login' %}" class="btn btn-secondary">Login</a>
+              <a href="{% url 'accounts:register' %}" class="btn btn-primary">Register</a>
+            {% endif %}
+          </div>
         </div>
       </div>
     </header>

@@ -1,22 +1,23 @@
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import user_passes_test, login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.conf import settings
 from django.contrib import messages
-from .models import JobOffer
-from .forms import JobOfferForm, JobFilterForm
 from imagekitio.models.UploadFileRequestOptions import UploadFileRequestOptions
 import logging
 import base64
+
+from .models import JobOffer
+from .forms import JobOfferForm, JobFilterForm
 
 logger = logging.getLogger(__name__)
 
 MAX_FILE_SIZE = 1 * 1024 * 1024  # 1MB
 ALLOWED_TYPES = ["image/jpeg", "image/png"]
 
-
 @user_passes_test(lambda u: u.is_staff)
+@login_required
 def job_create(request):
     if request.method == "POST":
         form = JobOfferForm(request.POST, request.FILES)
@@ -95,6 +96,7 @@ def job_create(request):
     return render(request, "job_create.html", {"form": form})
 
 @user_passes_test(lambda u: u.is_staff)
+@login_required
 def job_edit(request, pk):
     job = get_object_or_404(JobOffer, pk=pk)
     company = job.company
@@ -162,6 +164,7 @@ def job_edit(request, pk):
     return render(request, "job_edit.html", {"form": form, "job": job})
 
 @user_passes_test(lambda u: u.is_staff)
+@login_required
 def job_delete(request, pk):
     job = get_object_or_404(JobOffer, pk=pk)
     job.delete()

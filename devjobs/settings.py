@@ -27,6 +27,11 @@ MEDIA_ROOT = BASE_DIR / "media"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# Auth
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+
 # Image kit
 IMAGEKIT = ImageKit(
     private_key=os.getenv("IMAGEKIT_PRIVATE_KEY"),
@@ -72,6 +77,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'core',
+    'accounts.apps.AccountsConfig',
     'django_browser_reload',
 ]
 

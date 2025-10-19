@@ -54,10 +54,10 @@
 
       {% if request.user.is_staff %}
         <div class="job-admin">
-          <a href="{% url 'job_edit' job.pk %}" class="btn-edit">
+          <a href="{% url 'core:job_edit' job.pk %}" class="btn-edit">
             ✏️ Editar
           </a>
-          <a href="{% url 'job_delete' job.pk %}" onclick="return confirm('¿Seguro que deseas borrar esta oferta?');" class="btn-delete">
+          <a href="{% url 'core:job_delete' job.pk %}" onclick="return confirm('¿Seguro que deseas borrar esta oferta?');" class="btn-delete">
             🗑️ Borrar
           </a>
         </div>
