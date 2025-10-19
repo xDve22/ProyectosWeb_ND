@@ -8,7 +8,7 @@ from imagekitio.models.UploadFileRequestOptions import UploadFileRequestOptions
 import logging
 import base64
 
-from .models import JobOffer
+from .models import JobOffer, Company
 from .forms import JobOfferForm, JobFilterForm
 
 logger = logging.getLogger(__name__)
@@ -208,3 +208,13 @@ def job_list(request):
 def job_detail(request, pk):
     job = get_object_or_404(JobOffer, pk=pk)
     return render(request, "job_details.html", {"job": job})
+
+def company_detail(request, pk):
+    company = get_object_or_404(Company, pk=pk)
+    job_offers = company.job_offers.all().order_by("-created_at")
+
+    context = {
+        "company": company,
+        "job_offers": job_offers,
+    }
+    return render(request, "company_detail.html", context)
