@@ -2,7 +2,7 @@ FROM python:3.10
 
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /code
+WORKDIR /src
 
 COPY requirements.txt .
 

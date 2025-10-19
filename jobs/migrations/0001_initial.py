@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('location', models.CharField(max_length=255)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('employment_type', models.CharField(choices=[('FT', 'Full time'), ('PT', 'Part time'), ('IN', 'Internship'), ('CT', 'Contract'), ('FL', 'Freelance')], max_length=2)),
-                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='job_offers', to='core.company')),
+                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='job_offers', to='jobs.company')),
             ],
         ),
     ]

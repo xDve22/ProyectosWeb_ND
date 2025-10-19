@@ -25,7 +25,7 @@ def login_view(request):
             if user_auth:
                 login(request, user_auth)
                 messages.success(request, "Inicio de sesión exitoso.")
-                return redirect(next_url or "core:job_list")
+                return redirect(next_url or "jobs:job_list")
             else:
                 messages.error(request, "Contraseña incorrecta.")
     else:
@@ -42,7 +42,7 @@ def register_view(request):
             user.set_password(form.cleaned_data["password"])
             user.save()
             login(request, user)
-            return redirect("core:job_list")
+            return redirect("jobs:job_list")
     else:
         form = RegisterForm()
     return render(request, "register.html", {"form": form})
@@ -51,4 +51,4 @@ def register_view(request):
 def logout_view(request):
     logout(request)
     messages.info(request, "Sesión cerrada correctamente.")
-    return redirect("core:job_list")
+    return redirect("jobs:job_list")

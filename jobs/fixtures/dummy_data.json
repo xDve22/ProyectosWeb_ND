@@ -1,6 +1,6 @@
 [
   {
-    "model": "core.company",
+    "model": "jobs.company",
     "pk": 1,
     "fields": {
       "name": "OpenAI",
@@ -9,7 +9,7 @@
     }
   },
   {
-    "model": "core.company",
+    "model": "jobs.company",
     "pk": 2,
     "fields": {
       "name": "NeuraForge Technologies",
@@ -18,7 +18,7 @@
     }
   },
   {
-    "model": "core.company",
+    "model": "jobs.company",
     "pk": 3,
     "fields": {
       "name": "Atlas Cloud Systems",
@@ -27,7 +27,7 @@
     }
   },
   {
-    "model": "core.company",
+    "model": "jobs.company",
     "pk": 4,
     "fields": {
       "name": "QuantumEdge Robotics",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "model": "core.company",
+    "model": "jobs.company",
     "pk": 5,
     "fields": {
       "name": "Lumen DataWorks",
@@ -46,7 +46,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 1,
     "fields": {
       "company": 1,
@@ -58,7 +58,7 @@
     }
   },
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 2,
     "fields": {
       "company": 2,
@@ -70,7 +70,7 @@
     }
   },
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 3,
     "fields": {
       "company": 3,
@@ -82,7 +82,7 @@
     }
   },
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 4,
     "fields": {
       "company": 4,
@@ -94,7 +94,7 @@
     }
   },
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 5,
     "fields": {
       "company": 5,
@@ -107,7 +107,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 6,
     "fields": {
       "company": 1,
@@ -120,7 +120,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 7,
     "fields": {
       "company": 2,
@@ -132,7 +132,7 @@
     }
   },
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 8,
     "fields": {
       "company": 3,
@@ -144,7 +144,7 @@
     }
   },
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 9,
     "fields": {
       "company": 4,
@@ -156,7 +156,7 @@
     }
   },
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 10,
     "fields": {
       "company": 5,
@@ -169,7 +169,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 11,
     "fields": {
       "company": 1,
@@ -182,7 +182,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 12,
     "fields": {
       "company": 2,
@@ -195,7 +195,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 13,
     "fields": {
       "company": 3,
@@ -208,7 +208,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 14,
     "fields": {
       "company": 4,
@@ -221,7 +221,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 15,
     "fields": {
       "company": 5,
@@ -234,7 +234,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 16,
     "fields": {
       "company": 1,
@@ -247,7 +247,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 17,
     "fields": {
       "company": 3,
@@ -260,7 +260,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 18,
     "fields": {
       "company": 4,
@@ -273,7 +273,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 19,
     "fields": {
       "company": 2,
@@ -286,7 +286,7 @@
   },
 
   {
-    "model": "core.joboffer",
+    "model": "jobs.joboffer",
     "pk": 20,
     "fields": {
       "company": 5,

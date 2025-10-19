@@ -23,7 +23,7 @@
       </p>
 
       <h2 class="job-card__tittle">
-        <a href="{% url 'core:job_detail' job.pk %}">{{ job.title }}</a>
+        <a href="{% url 'jobs:job_detail' job.pk %}">{{ job.title }}</a>
       </h2>
 
       <p class="job-card__company"> {{ job.company.name }}</p>

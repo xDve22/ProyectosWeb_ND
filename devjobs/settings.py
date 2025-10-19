@@ -76,7 +76,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'core',
+    'jobs',
     'accounts.apps.AccountsConfig',
     'django_browser_reload',
 ]
