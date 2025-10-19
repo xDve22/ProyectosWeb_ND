@@ -29,12 +29,18 @@
           <div class="site-header__auth">
             {% if user.is_authenticated %}
               <span class="auth-greeting">Hello, {{ user.username }}!</span>
+
+              {% if request.path != '/profile/' and request.path != '/profile/edit/' %}
+                <a href="{% url 'accounts:profile_detail' %}" class="btn btn-outline">Profile</a>
+              {% endif %}
+
               <a href="{% url 'accounts:logout' %}" class="btn btn-outline">Logout</a>
             {% else %}
               <a href="{% url 'accounts:login' %}" class="btn btn-secondary">Login</a>
               <a href="{% url 'accounts:register' %}" class="btn btn-primary">Register</a>
             {% endif %}
           </div>
+
         </div>
       </div>
     </header>

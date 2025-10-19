@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Edit Profile</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    {% for field in form %}
+      <p>
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label><br>
+        {{ field }}
+        {% if field.errors %}
+          <small style="color:red;">{{ field.errors|striptags }}</small>
+        {% endif %}
+      </p>
+   {% endfor %}
+
+   <button type="submit">Save</button>
+  </form>
+
+  <a href="{% url 'accounts:profile_detail' %}">Back to Profile</a>
+{% endblock %}
