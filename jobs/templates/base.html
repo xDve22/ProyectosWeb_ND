@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'jobs/variables.css' %}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="{% static 'jobs/styles.css' %}" />
     <title>{% block title %}{% endblock %}</title>
@@ -14,34 +15,55 @@
     <header class="site-header">
       <div class="site-header__container">
         <a href="/" class="site-header__logo">devjobs</a>
-        
         <div class="site-header__actions">
-          <!-- Theme Toggle -->
-          <div class="site-header__toggle">
-            <img src="{% static 'icons/icon-sun.svg' %}" alt="Light Mode" class="icon">
-            <label class="switch">
-              <input type="checkbox" id="theme-toggles">
-              <span class="slider round"></span>
-            </label>
-            <img src="{% static 'icons/icon-moon.svg' %}" alt="Dark Mode" class="icon">
-          </div>
-
-          <!-- Auth Buttons -->
           <div class="site-header__auth">
             {% if user.is_authenticated %}
-              <span class="auth-greeting">Hello, {{ user.username }}!</span>
+              <div class="user-dropdown">
+                <button class="user-dropdown__trigger" id="userDropdownBtn" aria-expanded="false" aria-haspopup="true">
+                  <div class="user-info">
+                    {% if profile.avatar %}
+                      <img src="{{ profile.avatar }}" alt="Avatar"">
+                    {% else %}
+                      <img src="{% static 'img/avatar_default.svg' %}" alt="Default avatar"">
+                    {% endif %}
+                    <span class="auth-greeting">Hello, {{ user.username }}!</span>
+                  </div>
+                  <img src="{% static 'icons/icon-arrow.svg' %}" alt="Toggle menu" class="dropdown-arrow">
+                </button>
 
-              {% if request.path != '/profile/' and request.path != '/profile/edit/' %}
-                <a href="{% url 'accounts:profile_detail' %}" class="btn btn-outline">Profile</a>
-              {% endif %}
+                <div class="user-dropdown__menu" id="userDropdownMenu">
+                  {% if request.path != '/profile/' and request.path != '/profile/edit/' %}
+                    <a href="{% url 'accounts:profile_detail' %}" class="dropdown-item">
+                      <span>Profile</span>
+                    </a>
+                  {% endif %}
+                  
+                  <a href="{% url 'accounts:logout' %}" class="dropdown-item">
+                    <span>Logout</span>
+                  </a>
 
-              <a href="{% url 'accounts:logout' %}" class="btn btn-outline">Logout</a>
+                  <div class="dropdown-item dropdown-item--toggle">
+                    <span>Dark mode</span>
+                    <div class="toggle-wrapper">
+                      <label class="switch">
+                        <input type="checkbox" id="theme-toggles">
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             {% else %}
+              <div class="site-header__toggle">
+                <label class="switch">
+                  <input type="checkbox" id="theme-toggles">
+                  <span class="slider"></span>
+                </label>
+              </div>
               <a href="{% url 'accounts:login' %}" class="btn btn-secondary">Login</a>
               <a href="{% url 'accounts:register' %}" class="btn btn-primary">Register</a>
             {% endif %}
           </div>
-
         </div>
       </div>
     </header>
@@ -52,6 +74,7 @@
         <script src="{% url 'django_browser_reload:reload' %}"></script>
     {% endif %}
     <script src="{% static 'jobs/js/dark-mode.js' %}"></script>
+    <script src="{% static 'jobs/js/dropdown.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script>
