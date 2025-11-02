@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,16 +13,16 @@
     <header class="site-header">
       <div class="site-header__container">
         <a href="/" class="site-header__logo">devjobs</a>
-        
+
         <div class="site-header__actions">
           <!-- Theme Toggle -->
           <div class="site-header__toggle">
-            <img src="{% static 'icons/icon-sun.svg' %}" alt="Light Mode" class="icon">
+            <img src="{% static 'icons/icon-sun.svg' %}" alt="Light Mode" class="icon" />
             <label class="switch">
-              <input type="checkbox" id="theme-toggles">
+              <input type="checkbox" id="theme-toggles" />
               <span class="slider round"></span>
             </label>
-            <img src="{% static 'icons/icon-moon.svg' %}" alt="Dark Mode" class="icon">
+            <img src="{% static 'icons/icon-moon.svg' %}" alt="Dark Mode" class="icon" />
           </div>
 
           <!-- Auth Buttons -->
@@ -40,11 +40,10 @@
               <a href="{% url 'accounts:register' %}" class="btn btn-primary">Register</a>
             {% endif %}
           </div>
-
         </div>
       </div>
     </header>
-        
+
     {% block content %}{% endblock %}
     {% if messages %}
       <ul class="messages">
@@ -53,9 +52,8 @@
         {% endfor %}
       </ul>
     {% endif %}
-
     {% if debug %}
-        <script src="{% url 'django_browser_reload:reload' %}"></script>
+      <script src="{% url 'django_browser_reload:reload' %}"></script>
     {% endif %}
     <script src="{% static 'jobs/js/dark-mode.js' %}"></script>
   </body>

@@ -1,21 +1,22 @@
-{% extends "base.html" %}
-{% load static %}
-
+{% extends "base.html" %} {% load static %}
 {% block content %}
   <h1>{{ company.name }}</h1>
 
-{% if job.company.logo %}
-  <img src="{{ job.company.logo }}" alt="{{ job.company.name }}" width="50">
-{% else %}
-  <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
-{% endif %}
+  {% if job.company.logo %}
+    <img src="{{ job.company.logo }}" alt="{{ job.company.name }}" width="50" />
+  {% else %}
+    <img src="{% static 'img/default.png' %}" alt="Default logo" width="50" />
+  {% endif %}
 
   <p><strong>Description:</strong> {{ company.description }}</p>
   {% if company.website %}
-    <p><strong>Website:</strong> <a href="{{ company.website }}" target="_blank">{{ company.website }}</a></p>
+    <p>
+      <strong>Website:</strong>
+      <a href="{{ company.website }}" target="_blank">{{ company.website }}</a>
+    </p>
   {% endif %}
 
-  <hr>
+  <hr />
 
   <h2>Job Offers</h2>
 

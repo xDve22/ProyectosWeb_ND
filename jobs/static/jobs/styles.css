@@ -66,18 +66,17 @@
   --neutral-0: var(--slate-900);
 }
 
-html{
+html {
   height: 100vh;
 }
 
-body{
+body {
   background: var(--slate-100);
-  display: flex;  
+  display: flex;
   flex-direction: column;
   align-content: space-around;
-  min-height: 100%; 
+  min-height: 100%;
 }
-
 
 .site-header {
   background-image: url('../img/bg-pattern-header.svg');
@@ -279,13 +278,15 @@ input[type='checkbox']:checked::after {
 .job-card {
   background: var(--neutral-0);
   border-radius: var(--radius-6);
-  padding: 50px 25px  15px 25px;
+  padding: 50px 25px 15px 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--spacing-075);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   position: relative;
   max-height: 250px;
   overflow-wrap: break-word;
@@ -322,8 +323,8 @@ input[type='checkbox']:checked::after {
 .job-card__tittle {
   font: var(--text-preset-3);
   white-space: nowrap;
-  overflow: hidden;      
-  text-overflow: ellipsis; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .job-card__tittle a {
@@ -356,7 +357,7 @@ input[type='checkbox']:checked::after {
 .job-detail {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   width: 60%;
   height: fit-content;
   margin: 0 auto;
@@ -376,7 +377,7 @@ input[type='checkbox']:checked::after {
 
 .job-header__logo {
   width: 120px;
-  height: 120px; 
+  height: 120px;
 }
 
 .job-header__logo img {
@@ -445,7 +446,7 @@ input[type='checkbox']:checked::after {
   text-decoration: none;
   list-style-position: inside;
   line-height: 1.6;
-  flex: 1;   
+  flex: 1;
 }
 
 .job-body__description {
@@ -453,7 +454,8 @@ input[type='checkbox']:checked::after {
   color: var(--slate-500);
 }
 
-.job-body__description h1, h2{
+.job-body__description h1,
+h2 {
   font: var(--text-preset-3);
   color: var(--slate-900);
   margin-top: 1.5em;
@@ -461,13 +463,14 @@ input[type='checkbox']:checked::after {
   line-height: 1.3;
 }
 
-.job-body__description ol, ul{
-  margin: 2em 0; 
+.job-body__description ol,
+ul {
+  margin: 2em 0;
   font: var(--text-preset-4-regular);
   color: var(--slate-500);
 }
 
-.job-body__description li::marker{
+.job-body__description li::marker {
   color: var(--indigo-500);
 }
 
@@ -515,7 +518,7 @@ input[type='checkbox']:checked::after {
   background-color: var(--indigo-300);
 }
 
-.job-admin{
+.job-admin {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -524,7 +527,7 @@ input[type='checkbox']:checked::after {
   height: var(--spacing-600);
 }
 
-.job-admin a{
+.job-admin a {
   background: var(--slate-50);
   color: var(--indigo-300);
   font: var(--text-preset-4-bold);
@@ -533,10 +536,9 @@ input[type='checkbox']:checked::after {
   border-radius: 6px;
 }
 
-.job-admin a:hover{
+.job-admin a:hover {
   background: var(--slate-25);
 }
-
 
 .job-footer {
   background: var(--neutral-0);
@@ -544,34 +546,32 @@ input[type='checkbox']:checked::after {
   width: 100%;
 }
 
-
-.job-footer__container{
+.job-footer__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem var(--spacing-400);
   width: 60%;
   margin: 0 auto;
-
 }
 
-.job-footer__title{
+.job-footer__title {
   font: var(--text-preset-3);
   color: var(--slate-900);
 }
 
-.job-footer__company{
+.job-footer__company {
   font: var(--text-preset-4-regular);
   color: var(--slate-500);
 }
 
-.form-load{
+.form-load {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.btn-load{
+.btn-load {
   background-color: var(--indigo-500);
   color: var(--neutral-0);
   font: var(--text-preset-4-bold);
@@ -583,33 +583,32 @@ input[type='checkbox']:checked::after {
   margin: var(--spacing-500) 0;
 }
 
-.btn-load:hover{
+.btn-load:hover {
   background-color: var(--indigo-300);
 }
 
-@media (max-width: 900px){
-  
-  .job-detail{
+@media (max-width: 900px) {
+  .job-detail {
     width: 90%;
   }
 
-  .job-footer__container{
+  .job-footer__container {
     width: 100%;
   }
 }
 
 @media (max-width: 728px) {
-
-  .site-header{
+  .site-header {
     border-bottom-left-radius: var(--radius-0);
   }
 
-  .search-form, .site-header__container{
+  .search-form,
+  .site-header__container {
     display: flex;
     justify-content: space-between;
     width: 90%;
   }
-  .job-list{
+  .job-list {
     width: 90%;
   }
 
@@ -654,18 +653,18 @@ input[type='checkbox']:checked::after {
   .job-detail {
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
     width: 90%;
     height: fit-content;
     margin: 0 auto;
     row-gap: var(--spacing-400);
   }
 
-  .job-footer__info{
+  .job-footer__info {
     display: none;
   }
 
-  .btn-apply{
+  .btn-apply {
     width: 100%;
     text-align: center;
   }
@@ -704,13 +703,13 @@ input[type='checkbox']:checked::after {
     gap: 1rem;
   }
 
-  .job-header__info{
+  .job-header__info {
     text-align: center;
   }
 
   .job-header__logo {
     position: absolute;
-    border-radius: var(--radius-16); 
+    border-radius: var(--radius-16);
     top: -25px;
     width: 50px;
     height: 50px;
@@ -721,15 +720,10 @@ input[type='checkbox']:checked::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: var(--radius-16); 
+    border-radius: var(--radius-16);
   }
 
   .job-body__tittle {
     font: var(--text-preset-3);
   }
-
-
-  
-
-
 }

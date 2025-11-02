@@ -1,0 +1,17 @@
+{
+  "name": "devjobs-web-app",
+  "version": "1.0.0",
+  "description": "Este proyecto utiliza Docker y Docker Compose para levantar un entorno de desarrollo de Django de manera rápida y consistente.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write '**/*.{js,css,scss,json,html}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "prettier-plugin-django-template": "0.1.1",
+    "prettier-plugin-jinja-template": "2.1.0"
+  }
+}

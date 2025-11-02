@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-
 {% block content %}
   <h1>My Profile</h1>
 
   {% if profile.avatar %}
-    <img src="{{ profile.avatar }}" alt="Avatar" width="150" style="border-radius: 50%;">
+    <img src="{{ profile.avatar }}" alt="Avatar" width="150" style="border-radius: 50%" />
   {% else %}
     <p>No avatar uploaded yet.</p>
   {% endif %}

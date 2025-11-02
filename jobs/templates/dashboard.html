@@ -1,50 +1,45 @@
-{% extends "base.html" %}
-{% block title %}Job Offers{% endblock %}
-
+{% extends "base.html" %} {% block title %}Job Offers{% endblock %}
 {% load static %}
 {% load time_filters %}
 
 {% block content %}
-<main>
-  {% include "_job_filters.html" %}
-  
-  <ul class="job-list">
-    {% for job in jobs %}
-    <li class="job-card">
-      <div class="job-card__logo"> 
-        {% if job.company.logo %}
-          <img src="{{ job.company.logo }}" alt="{{ job.company.name }}" width="50">
-        {% else %}
-          <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
-        {% endif %}
-      </div>
-      <p class="job-card__time">
-        {{ job.created_at|short_timesince }} • {{ job.get_employment_type_display }}
-      </p>
+  <main>
+    {% include "_job_filters.html" %}
 
-      <h2 class="job-card__tittle">
-        <a href="{% url 'jobs:job_detail' job.pk %}">{{ job.title }}</a>
-      </h2>
+    <ul class="job-list">
+      {% for job in jobs %}
+        <li class="job-card">
+          <div class="job-card__logo">
+            {% if job.company.logo %}
+              <img src="{{ job.company.logo }}" alt="{{ job.company.name }}" width="50" />
+            {% else %}
+              <img src="{% static 'img/default.png' %}" alt="Default logo" width="50" />
+            {% endif %}
+          </div>
+          <p class="job-card__time">
+            {{ job.created_at|short_timesince }} • {{ job.get_employment_type_display }}
+          </p>
 
-      <p class="job-card__company"> {{ job.company.name }}</p>
-      <p class="job-card__location">{{ job.location }}</p>
+          <h2 class="job-card__tittle">
+            <a href="{% url 'jobs:job_detail' job.pk %}">{{ job.title }}</a>
+          </h2>
 
-    </li>
-    {% empty %}
-    <li>No job offers available.</li>
-    {% endfor %}
-  </ul>
-
-  {% if has_next %}
-    <form class="form-load" method="get">
-      {% for key, value in request.GET.items %}
-        {% if key != 'page' %}
-          <input type="hidden" name="{{ key }}" value="{{ value }}">
-        {% endif %}
+          <p class="job-card__company">{{ job.company.name }}</p>
+          <p class="job-card__location">{{ job.location }}</p>
+        </li>
+        {% empty %}
+        <li>No job offers available.</li>
       {% endfor %}
-      <input type="hidden" name="page" value="{{ page|add:1 }}">
-      <button class="btn-load" type="submit">Load more</button>
-    </form>
-  {% endif %}
-</main>
+    </ul>
+
+    {% if has_next %}
+      <form class="form-load" method="get">
+        {% for key, value in request.GET.items %}{% if key != 'page' %}
+          <input type="hidden" name="{{ key }}" value="{{ value }}" />
+        {% endif %}{% endfor %}
+        <input type="hidden" name="page" value="{{ page|add:1 }}" />
+        <button class="btn-load" type="submit">Load more</button>
+      </form>
+    {% endif %}
+  </main>
 {% endblock %}
