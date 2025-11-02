@@ -12,6 +12,12 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields = ["username", "email", "password"]
 
+    def clean_username(self):
+        username = self.cleaned_data.get("username")
+        if username and len(username) > 30:
+            raise forms.ValidationError("El nombre de usuario no puede superar los 50 caracteres.")
+        return username
+
     def clean(self):
         cleaned_data = super().clean()
         password = cleaned_data.get("password")
