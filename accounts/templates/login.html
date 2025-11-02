@@ -1,25 +1,29 @@
+{% extends "base.html" %}
 {% load static %}
 
-<h1>Iniciar sesión</h1>
 
-<form method="post">
-  {% csrf_token %}
-  <input type="hidden" name="next" value="{{ request.GET.next|default_if_none:'' }}">
+{% block content %}
+  <h1>Iniciar sesión</h1>
 
-  {{ form.non_field_errors }}
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.GET.next|default_if_none:'' }}">
 
-  <div>
-    {{ form.email.label_tag }}
-    {{ form.email }}
-    {{ form.email.errors }}
-  </div>
+    {{ form.non_field_errors }}
 
-  <div>
-    {{ form.password.label_tag }}
-    {{ form.password }}
-    {{ form.password.errors }}
-  </div>
-  <a href="{% url 'accounts:register' %}" class="btn-apply">You do not have and account?</a>
+    <div>
+      {{ form.email.label_tag }}
+      {{ form.email }}
+      {{ form.email.errors }}
+    </div>
 
-  <button type="submit">Entrar</button>
-</form>
+    <div>
+      {{ form.password.label_tag }}
+      {{ form.password }}
+      {{ form.password.errors }}
+    </div>
+    <a href="{% url 'accounts:register' %}" class="btn-apply">You do not have and account?</a>
+
+    <button type="submit">Entrar</button>
+  </form>
+{% endblock %}

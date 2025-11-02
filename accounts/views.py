@@ -55,8 +55,16 @@ def register_view(request):
             user.save()
             login(request, user)
             return redirect("jobs:job_list")
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    if field == "__all__":
+                        messages.error(request, error)
+                    else:
+                        messages.error(request, f"{form.fields[field].label}: {error}")
     else:
         form = RegisterForm()
+
     return render(request, "register.html", {"form": form})
 
 @login_required
