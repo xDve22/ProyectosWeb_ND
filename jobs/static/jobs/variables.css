@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*Style Color*/
+
+  /* Neutral Black and White */
+  --neutral-950: #000000;
+  --neutral-0: #ffffff;
+
+  /* Slate */
+  --slate-950: #121721;
+  --slate-900: #19202d;
+  --slate-500: #6e8098;
+  --slate-300: #9daec2;
+  --slate-100: #f4f6f8;
+  --slate-25: #f4f6f8;
+  --slate-50: #e0e4f2;
+
+  /* Indigo */
+  --indigo-500: #5964e0;
+  --indigo-300: #939bf4;
+
+  /* Typography */
+  --text-preset-1: bold 28px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-2: bold 24px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-3: bold 20px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-4-bold: bold 16px/125% 'Kumbh Sans', sans-serif;
+  --text-preset-4-regular: normal 16px/162.5% 'Kumbh Sans', sans-serif;
+  --text-preset-5: bold 14px/120% 'Kumbh Sans', sans-serif;
+
+  /* Spacing */
+  --spacing-0: 0;
+  --spacing-050: 4px;
+  --spacing-075: 6px;
+  --spacing-100: 8px;
+  --spacing-125: 10px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-375: 30px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-550: 44px;
+  --spacing-600: 48px;
+  --spacing-700: 56px;
+  --spacing-1000: 80px;
+
+  /* Radius */
+  --radius-0: 0;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-40: 40px;
+  --radius-100: 100px;
+}
+
+[data-theme='dark'] {
+  --slate-100: var(--slate-950);
+
+  --neutral-0: var(--slate-900);
+}
