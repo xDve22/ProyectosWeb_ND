@@ -40,6 +40,13 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ["bio", "birth_date", "phone", "address", "city", "country"]
+        widgets = {
+        "bio": forms.Textarea(attrs={
+            "rows": 4,
+            "maxlength": 255,
+            "class": "edit-profile__bio"
+        })
+    }
 
     def clean_birth_date(self):
         birth_date = self.cleaned_data.get("birth_date")

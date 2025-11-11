@@ -1,21 +1,53 @@
 {% extends "base.html" %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'jobs/profile.css' %}">
+{% endblock %}
 
 {% block content %}
-  <h1>My Profile</h1>
+<div class="profile">
+  <div class="profile-card">
+    <div class="profile-card__header">
+      <div class="profile-card__avatar">
+        {% if profile.avatar %}
+          <img src="{{ profile.avatar }}" alt="{{ profile.user.username }}">
+        {% else %}
+          <img src="{% static 'img/avatar_default.svg' %}" alt="Default avatar">
+        {% endif %}
+      </div>
+      
+      <div class="profile-card__info">
+        <h1 class="profile-card__name">{{ profile.user.username }}</h1>
+        {% if profile.bio %}
+          <p class="profile-card__bio">{{ profile.bio }}</p>
+        {% else %}
+          <p class="profile-card__bio profile-card__bio--empty">No bio available. Add one to tell others about yourself!</p>
+        {% endif %}
+      </div>
+    </div>
 
-  {% if profile.avatar %}
-    <img src="{{ profile.avatar }}" alt="Avatar" width="150" style="border-radius: 50%;">
-  {% else %}
-    <p>No avatar uploaded yet.</p>
-  {% endif %}
+    <div class="profile-card__details">
+      {% for field in profile_fields %}
+        <div class="profile-detail">
+          <span class="profile-detail__label">{{ field.label }}:</span>
+          <span class="profile-detail__value {% if not field.value %}profile-detail__value--empty{% endif %}">
+            {% if field.format == 'date' and field.value %}
+              {{ field.value|date:"d F, Y" }}
+            {% elif field.value %}
+              {{ field.value }}
+            {% else %}
+              Not specified
+            {% endif %}
+          </span>
+        </div>
+      {% endfor %}
+    </div>
 
-  <p><strong>Username:</strong> {{ profile.user.username }}</p>
-  <p><strong>Bio:</strong> {{ profile.bio }}</p>
-  <p><strong>Birth Date:</strong> {{ profile.birth_date }}</p>
-  <p><strong>Phone:</strong> {{ profile.phone }}</p>
-  <p><strong>Address:</strong> {{ profile.address }}</p>
-  <p><strong>City:</strong> {{ profile.city }}</p>
-  <p><strong>Country:</strong> {{ profile.country }}</p>
-
-  <a href="{% url 'accounts:profile_edit' %}">Edit Profile</a>
+    <div class="profile-card__footer">
+      <a href="{% url 'accounts:profile_edit' %}" class="btn btn-edit-profile">
+        <span>Edit Profile</span>
+      </a>
+    </div>
+  </div>
+</div>
 {% endblock %}

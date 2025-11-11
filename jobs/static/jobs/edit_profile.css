@@ -1,0 +1,316 @@
+.edit-profile {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: -32px;
+}
+
+.edit-profile__card {
+  background: var(--neutral-0);
+  border-radius: var(--radius-6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: var(--spacing-600) var(--spacing-500);
+  overflow: hidden;
+}
+
+.edit-profile__title {
+  font: var(--text-preset-2);
+  color: var(--slate-950);
+  margin-bottom: var(--spacing-500);
+}
+
+.edit-profile__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.form-errors {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  padding: var(--spacing-150);
+  border-radius: var(--radius-4);
+  font: var(--text-preset-5);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-150);
+}
+
+.form-group--full {
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-300);
+}
+
+.form-group__label {
+  font: var(--text-preset-4-bold);
+  color: var(--slate-500);
+}
+
+.edit-profile__form input[type="text"],
+.edit-profile__form input[type="date"],
+.edit-profile__form input[type="tel"],
+.edit-profile__form input[type="email"],
+.edit-profile__form input[type="number"],
+.edit-profile__form textarea,
+.edit-profile__form select {
+  width: 100%;
+  padding: var(--spacing-150) var(--spacing-200);
+  border: 1px solid var(--slate-50);
+  border-radius: var(--radius-6);
+  font: var(--text-preset-4-regular);
+  color: var(--slate-950);
+  background-color: var(--neutral-0);
+  transition: border-color 0.2s ease;
+}
+
+.edit-profile__form input[type="text"]:focus,
+.edit-profile__form input[type="date"]:focus,
+.edit-profile__form input[type="tel"]:focus,
+.edit-profile__form input[type="email"]:focus,
+.edit-profile__form input[type="number"]:focus,
+.edit-profile__form textarea:focus,
+.edit-profile__form select:focus {
+  outline: none;
+  border-color: var(--indigo-500);
+}
+
+.edit-profile__form textarea {
+  min-height: 120px;
+  max-height: 160px;
+  height: auto;
+  overflow-y: auto;
+  resize: vertical;
+  font: var(--text-preset-4-regular);
+  line-height: 1.6;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  scrollbar-width: thin;
+  scrollbar-color: var(--slate-300) var(--slate-100);
+}
+
+.edit-profile__form input[type="date"] {
+  position: relative;
+  cursor: pointer;
+}
+
+.edit-profile__form input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.form-group__error {
+  color: #dc2626;
+  font: var(--text-preset-5);
+}
+
+.edit-profile__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-600);
+  margin-top: var(--spacing-300);
+}
+
+.btn-save {
+  padding: var(--spacing-150) var(--spacing-400);
+  background-color: var(--indigo-500);
+  color: var(--neutral-0);
+  font: var(--text-preset-4-bold);
+  border: none;
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-save:hover {
+  background-color: var(--indigo-300);
+}
+
+.btn-back {
+  font: var(--text-preset-4-bold);
+  color: var(--indigo-500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.btn-back:hover {
+  color: var(--indigo-300);
+}
+
+.dropbox {
+  position: relative;
+  background-color: var(--neutral-0);
+  border: 2px dashed var(--slate-300);
+  border-radius: var(--radius-6);
+  padding: var(--spacing-400) var(--spacing-300);
+  transition: all 0.3s ease;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropbox.has-advanced-upload {
+  background-color: var(--slate-25);
+  cursor: pointer;
+}
+
+.dropbox.has-advanced-upload:hover {
+  border-color: var(--indigo-500);
+  background-color: var(--slate-50);
+}
+
+.dropbox.has-advanced-upload:hover .dropbox__icon {
+  transform: translateY(-4px);
+  opacity: 0.8;
+}
+
+.dropbox.is-dragover {
+  background-color: rgba(89, 100, 224, 0.05);
+  border-color: var(--indigo-500);
+  border-style: solid;
+  border-width: 3px;
+}
+
+.dropbox.is-dragover .dropbox__visual {
+  transform: scale(1.02);
+}
+
+.dropbox.is-dragover .dropbox__icon {
+  transform: translateY(-8px) scale(1.1);
+}
+
+.dropbox__input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
+.dropbox__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-150);
+  transition: transform 0.3s ease;
+}
+
+.dropbox__icon {
+  width: 56px;
+  height: 56px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.dropbox__text {
+  font: var(--text-preset-4-bold);
+  color: var(--slate-500);
+  text-align: center;
+}
+
+.dropbox__or {
+  font: var(--text-preset-5);
+  color: var(--slate-500);
+  margin: var(--spacing-050) 0;
+}
+
+.dropbox__button {
+  display: inline-block;
+  padding: var(--spacing-125) var(--spacing-400);
+  background-color: var(--indigo-500);
+  color: var(--neutral-0);
+  font: var(--text-preset-5);
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid var(--indigo-500);
+  text-align: center;
+  min-width: 140px;
+}
+
+.dropbox__button:hover {
+  background-color: var(--indigo-300);
+  border-color: var(--indigo-300);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(89, 100, 224, 0.3);
+}
+
+.dropbox__input input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.dropbox__filename {
+  font: var(--text-preset-4-regular);
+  color: var(--slate-500);
+  text-align: center;
+  word-break: break-word;
+  margin-top: var(--spacing-100);
+  max-width: 100%;
+}
+
+@media (max-width: 728px) {
+  .edit-profile {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -32px;
+  }
+
+  .edit-profile__card {
+    padding: var(--spacing-400) var(--spacing-300);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-profile__actions {
+    flex-direction: column;
+    gap: var(--spacing-200);
+    align-items: stretch;
+  }
+
+  .btn-back {
+    text-align: center;
+  }
+
+  .dropbox {
+    padding: var(--spacing-300) var(--spacing-200);
+    min-height: 180px;
+  }
+  
+  .dropbox__icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .dropbox__text {
+    font: var(--text-preset-5);
+  }
+  
+  .dropbox__button {
+    width: 100%;
+    max-width: 180px;
+  }
+}

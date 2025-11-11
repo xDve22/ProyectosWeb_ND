@@ -76,7 +76,19 @@ def logout_view(request):
 @login_required
 def profile_detail(request):
     profile = get_object_or_404(Profile, user=request.user)
-    return render(request, "profile/detail.html", {"profile": profile})
+    
+    profile_fields = [
+        {'label': 'Birth Date', 'value': profile.birth_date, 'format': 'date'},
+        {'label': 'Phone', 'value': profile.phone, 'format': 'text'},
+        {'label': 'Address', 'value': profile.address, 'format': 'text'},
+        {'label': 'Country', 'value': profile.country, 'format': 'text'},
+        {'label': 'City', 'value': profile.city, 'format': 'text'},
+    ]
+    
+    return render(request, "profile/detail.html", {
+        "profile": profile,
+        "profile_fields": profile_fields
+    })
 
 @login_required
 def profile_edit(request):
