@@ -1,0 +1,141 @@
+.login {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: -32px;
+  max-width: 445px;
+}
+
+.login__container {
+  background: var(--neutral-0);
+  border-radius: var(--radius-6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: var(--spacing-500) var(--spacing-600);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.login__title {
+  font: var(--text-preset-1);
+  color: var(--slate-900);
+  margin-bottom: var(--spacing-500);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.login__errors {
+  padding: var(--spacing-200);
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: var(--radius-4);
+  color: #d32f2f;
+  font: var(--text-preset-5);
+}
+
+.login__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+  border: none;
+  padding: 0;
+}
+
+.login__label {
+  font: var(--text-preset-5);
+  color: var(--slate-500);
+}
+
+.login__input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-150);
+  border-bottom: 1px solid var(--slate-300);
+  transition: border-color 0.3s ease;
+}
+
+.login__input-wrapper:focus-within {
+  border-bottom-color: var(--indigo-500);
+}
+
+.login__icon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.login__field input {
+  width: 100%;
+  padding: var(--spacing-100) 0;
+  border: none;
+  background-color: transparent;
+  font: var(--text-preset-4-regular);
+  color: var(--slate-950);
+  outline: none;
+}
+
+.login__field input::placeholder {
+  color: var(--slate-500);
+  opacity: 0.6;
+}
+
+.login__field-errors {
+  padding: var(--spacing-050);
+  color: #d32f2f;
+  font: var(--text-preset-5);
+  font-size: 12px;
+}
+
+.login__button {
+  width: 100%;
+  padding: var(--spacing-200);
+  margin-top: var(--spacing-200);
+  background-color: var(--indigo-500);
+  color: var(--neutral-0);
+  border: none;
+  border-radius: var(--radius-6);
+  font: var(--text-preset-4-bold);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login__button:hover {
+  background-color: var(--indigo-300);
+}
+
+.login__register {
+  text-align: center;
+  font: var(--text-preset-5);
+  color: var(--slate-500);
+  margin-top: var(--spacing-100);
+}
+
+.login__register-link {
+  color: var(--indigo-500);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login__register-link:hover {
+  color: var(--indigo-300);
+}
+
+.btn-secondary {
+    display: none;
+}
+
+@media (max-width: 768px) {
+  .login {
+    width: 90%;
+  }
+
+  .login__container {
+    padding: var(--spacing-400);
+  }
+
+  .login__title {
+    font-size: 24px;
+  }
+}
