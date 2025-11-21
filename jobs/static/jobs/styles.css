@@ -82,11 +82,12 @@ body{
   gap: var(--spacing-150);
 }
 
-.user-info img{
+.user-info img {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
+  object-fit: cover;
 }
-
 .auth-greeting {
   font: var(--text-preset-4-bold);
   color: var(--neutral-0);
@@ -855,6 +856,5 @@ input[type='checkbox']:checked::after {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-  
+  } 
 }
