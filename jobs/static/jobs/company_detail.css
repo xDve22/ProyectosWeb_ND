@@ -31,22 +31,20 @@
 .company-header__info {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   flex: 1;
-  row-gap: 5px;
-  padding-left: var(--spacing-400);
+  gap: var(--spacing-050);
+  padding: 0 var(--spacing-400);
 }
 
 .company-header__name {
   font: var(--text-preset-2);
   color: var(--slate-900);
-  width: 85%;
 }
 
 .company-header__website {
   font: var(--text-preset-4-regular);
   color: var(--slate-500);
-  width: 85%;
 }
 
 .company-body {
@@ -61,7 +59,7 @@
 .company-body__section {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-300);
+  gap: var(--spacing-150);
 }
 
 .company-body__title {
@@ -72,18 +70,23 @@
 .company-body__subtitle {
   font: var(--text-preset-4-bold);
   color: var(--slate-900);
+  width: fit-content;
 }
 
 .company-body__text {
   font: var(--text-preset-4-regular);
   color: var(--slate-500);
   line-height: 1.6;
+  min-height: 50px;
+  height: fit-content;
 }
 
 .company-body__link {
   font: var(--text-preset-4-regular);
   color: var(--indigo-500);
   text-decoration: none;
+  width: fit-content;
+  word-break: break-all;
 }
 
 .company-body__link:hover {
@@ -165,12 +168,13 @@
   }
 
   .company-header__name {
-    font: var(--text-preset-3);
-    width: 100%;
+    font: var(--text-preset-2);
+    color: var(--slate-900);
   }
 
   .company-header__website {
-    width: 100%;
+    font: var(--text-preset-4-regular);
+    color: var(--slate-500);
   }
 
   .company-body {
@@ -178,7 +182,7 @@
   }
 
   .company-offers {
-    gap: var(--spacing-500);
+    gap: var(--spacing-600);
   }
 
   .company-offers__title {

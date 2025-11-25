@@ -489,29 +489,28 @@ input[type='checkbox']:checked::after {
 
 .job-header__info {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   flex: 1;
-  row-gap: 5px;
+  gap: var(--spacing-050);
+  padding: 0 var(--spacing-400);
 }
 
 .job-header__company {
   font: var(--text-preset-2);
   color: var(--slate-900);
-  width: 85%;
 }
 
 .job-header__website {
   font: var(--text-preset-4-regular);
   color: var(--slate-500);
-  width: 85%;
 }
 
 .job-header__button {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 200px;
+  justify-content: flex-end;
+  padding-right: var(--spacing-400);
 }
 
 .btn-company-site {
@@ -519,8 +518,9 @@ input[type='checkbox']:checked::after {
   color: var(--indigo-500);
   font: var(--text-preset-4-bold);
   text-decoration: none;
-  padding: var(--spacing-125) var(--spacing-200);
+  padding: var(--spacing-150) var(--spacing-200);
   border-radius: var(--radius-6);
+  white-space: nowrap;
 }
 
 .btn-company-site:hover {
@@ -687,7 +687,7 @@ input[type='checkbox']:checked::after {
   background-color: var(--indigo-300);
 }
 
-@media (max-width: 900px){
+@media (max-width: 1100px){
   
   .job-detail{
     width: 90%;
@@ -846,6 +846,16 @@ input[type='checkbox']:checked::after {
   .btn-primary, .btn-secondary {
     font-size: 14px;
     padding: var(--spacing-100) var(--spacing-200);
+  }
+
+  .job-header__button {
+    padding-right: 0;
+    justify-content: center;
+  }
+  
+  .btn-company-site {
+    width: 100%;
+    text-align: center;
   }
 }
 
