@@ -1,35 +1,71 @@
 {% extends "base.html" %}
 {% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'jobs/company_detail.css' %}">
+{% endblock %}
+
+{% block title %}{{ company.name }}{% endblock %}
 
 {% block content %}
-  <h1>{{ company.name }}</h1>
+<section class="company-detail">
+  <div class="company-header">
+    <div class="company-header__logo">
+      {% if company.logo %}
+        <img src="{{ company.logo }}" alt="{{ company.name }}">
+      {% else %}
+        <img src="{% static 'img/default.png' %}" alt="Default logo">
+      {% endif %}
+    </div>
+    <div class="company-header__info">
+      <h1 class="company-header__name">{{ company.name }}</h1>
+      {% if company.website %}
+        <p class="company-header__website">{{ company.website }}</p>
+      {% endif %}
+    </div>
+  </div>
 
-{% if job.company.logo %}
-  <img src="{{ job.company.logo }}" alt="{{ job.company.name }}" width="50">
-{% else %}
-  <img src="{% static 'img/default.png' %}" alt="Default logo" width="50">
-{% endif %}
+  <div class="company-body">
+    <div class="company-body__section">
+      <h2 class="company-body__title">Description</h2>
+      <p class="company-body__text">{{ company.description }}</p>
+    </div>
 
-  <p><strong>Description:</strong> {{ company.description }}</p>
-  {% if company.website %}
-    <p><strong>Website:</strong> <a href="{{ company.website }}" target="_blank">{{ company.website }}</a></p>
-  {% endif %}
+    {% if company.website %}
+    <div class="company-body__section">
+      <h3 class="company-body__subtitle">Website</h3>
+      <a href="{{ company.website }}" target="_blank" class="company-body__link">{{ company.website }}</a>
+    </div>
+    {% endif %}
+  </div>
 
-  <hr>
+  <div class="company-offers">
+    <h2 class="company-offers__title">Job Offers</h2>
 
-  <h2>Job Offers</h2>
-
-  {% if job_offers %}
-    <ul>
+    {% if job_offers %}
+    <ul class="company-jobs">
       {% for job in job_offers %}
-        <li>
-          <h3>{{ job.title }}</h3>
-          <p>{{ job.location }} — {{ job.get_employment_type_display }}</p>
-          <small>Posted on {{ job.created_at|date:"F j, Y" }}</small>
-        </li>
+      <li class="job-card">
+        <div class="job-card__logo">
+          {% if job.company.logo %}
+            <img src="{{ job.company.logo }}" alt="{{ job.company.name }}">
+          {% else %}
+            <img src="{% static 'img/default.png' %}" alt="Default logo">
+          {% endif %}
+        </div>
+        <p class="job-card__time">
+          {{ job.created_at|timesince }} ago • {{ job.get_employment_type_display }}
+        </p>
+        <h3 class="job-card__tittle">
+          <a href="{% url 'jobs:job_detail' job.pk %}">{{ job.title }}</a>
+        </h3>
+        <p class="job-card__company">{{ job.company.name }}</p>
+        <p class="job-card__location">{{ job.location }}</p>
+      </li>
       {% endfor %}
     </ul>
-  {% else %}
-    <p>No job offers available for this company.</p>
-  {% endif %}
+    {% else %}
+    <p class="company-offers__empty">No job offers available for this company.</p>
+    {% endif %}
+  </div>
+</section>
 {% endblock %}
