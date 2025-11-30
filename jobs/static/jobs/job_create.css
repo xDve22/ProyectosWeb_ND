@@ -1,0 +1,227 @@
+.job-create {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: -32px;
+}
+
+.job-create__card {
+  background: var(--neutral-0);
+  border-radius: var(--radius-6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: var(--spacing-600) var(--spacing-500);
+  overflow: hidden;
+}
+
+.job-create__title {
+  font: var(--text-preset-2);
+  color: var(--slate-950);
+  margin-bottom: var(--spacing-500);
+}
+
+.job-create__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-150);
+}
+
+.form-group--full {
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-300);
+}
+
+.form-group__label {
+  font: var(--text-preset-4-bold);
+  color: var(--slate-500);
+}
+
+.job-create__form input[type="text"],
+.job-create__form select {
+  width: 100%;
+  height: 48px;
+  padding: var(--spacing-150) var(--spacing-200);
+  border: 1px solid var(--slate-50);
+  border-radius: var(--radius-6);
+  font: var(--text-preset-4-regular);
+  color: var(--slate-950);
+  background-color: var(--neutral-0);
+  transition: border-color 0.2s ease;
+}
+
+.job-create__form input[type="text"]:focus,
+.job-create__form select:focus {
+  outline: none;
+  border-color: var(--indigo-500);
+}
+
+.job-create__form input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.job-create__form input[name="description"] {
+  display: none;
+}
+
+.job-create__logo-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-400);
+}
+
+.job-create__logo-preview {
+  width: 110px;
+  height: 110px;
+  border-radius: var(--radius-6);
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--slate-100);
+}
+
+.job-create__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.job-create__file-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+}
+
+.job-create__file-btn {
+  display: inline-block;
+  padding: var(--spacing-150) var(--spacing-300);
+  background-color: var(--neutral-0);
+  color: var(--indigo-500);
+  font: var(--text-preset-4-bold);
+  border: 2px solid var(--slate-50);
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.job-create__file-btn:hover {
+  border-color: var(--indigo-500);
+  background-color: var(--slate-25);
+}
+
+.job-create__file-name {
+  font: var(--text-preset-5);
+  color: var(--slate-500);
+  word-break: break-word;
+}
+
+.job-create__editor {
+  border: 1px solid var(--slate-50);
+  border-radius: var(--radius-6);
+  overflow: hidden;
+  background-color: var(--neutral-0);
+}
+
+.job-create__editor-content {
+  min-height: 280px;
+  font: var(--text-preset-4-regular);
+}
+
+.job-create__editor .ql-toolbar {
+  border: none;
+  border-bottom: 1px solid var(--slate-50);
+  background-color: var(--slate-25);
+  padding: var(--spacing-150) var(--spacing-200);
+}
+
+.job-create__editor .ql-container {
+  border: none;
+  font: var(--text-preset-4-regular);
+}
+
+.job-create__editor .ql-editor {
+  min-height: 280px;
+  padding: var(--spacing-200);
+  color: var(--slate-950);
+}
+
+.job-create__editor .ql-editor.ql-blank::before {
+  color: var(--slate-300);
+  font-style: normal;
+}
+
+.job-create__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-600);
+  margin-top: var(--spacing-300);
+}
+
+.btn-create {
+  padding: var(--spacing-150) var(--spacing-400);
+  background-color: var(--indigo-500);
+  color: var(--neutral-0);
+  font: var(--text-preset-4-bold);
+  border: none;
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-create:hover {
+  background-color: var(--indigo-300);
+}
+
+@media (max-width: 1100px) {
+  .job-create {
+    width: 90%;
+  }
+}
+
+@media (max-width: 728px) {
+  .job-create__card {
+    padding: var(--spacing-400) var(--spacing-300);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .job-create__actions {
+    align-items: stretch;
+  }
+
+  .btn-create {
+    width: 100%;
+  }
+
+  .job-create__logo-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .job-create__file-info {
+    width: 100%;
+  }
+
+  .job-create__file-btn {
+    width: 100%;
+  }
+}
