@@ -1,5 +1,6 @@
 env
 
+staticfiles/
 media
 .env
 backup.json

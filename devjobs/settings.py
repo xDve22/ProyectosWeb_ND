@@ -46,7 +46,7 @@ IMAGEKIT = ImageKit(
 SECRET_KEY = 'django-insecure-0(28i@#&a4r%l(3x@x%ya+-)x4t1i15nu_y3kujw)vgnl0caxy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = []
 
