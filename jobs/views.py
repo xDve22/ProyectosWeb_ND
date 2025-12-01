@@ -85,7 +85,7 @@ def job_create(request):
                     return render(request, "job_create.html", {"form": form})
 
             messages.success(request, "Job created successfully.")
-            return redirect("job_list")
+            return redirect("jobs:job_list")
         else:
             logger.info("================================")
             logger.error(f"Errores del formulario: {form.errors}")
@@ -155,7 +155,7 @@ def job_edit(request, pk):
                     return render(request, "job_edit.html", {"form": form, "job": job})
 
             messages.success(request, "Job updated successfully.")
-            return redirect("job_detail", pk=job.pk)
+            return redirect("jobs:job_detail", pk=job.pk)
         else:
             logger.error(f"Errores del formulario: {form.errors}")
     else:
@@ -168,7 +168,7 @@ def job_edit(request, pk):
 def job_delete(request, pk):
     job = get_object_or_404(JobOffer, pk=pk)
     job.delete()
-    return redirect("job_list")
+    return redirect("jobs:job_list")
 
 def job_list(request):
     jobs = JobOffer.objects.select_related("company").order_by("-created_at")
