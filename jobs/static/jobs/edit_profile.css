@@ -1,5 +1,6 @@
 .edit-profile {
   width: 60%;
+  max-width: 920px;
   margin: 0 auto;
   margin-top: -32px;
 }
@@ -124,7 +125,7 @@
   margin-top: var(--spacing-300);
 }
 
-.btn-save {
+.btn--save {
   padding: var(--spacing-150) var(--spacing-400);
   background-color: var(--indigo-500);
   color: var(--neutral-0);
@@ -135,18 +136,18 @@
   transition: background-color 0.2s ease;
 }
 
-.btn-save:hover {
+.btn--save:hover {
   background-color: var(--indigo-300);
 }
 
-.btn-back {
+.btn--back {
   font: var(--text-preset-4-bold);
   color: var(--indigo-500);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.btn-back:hover {
+.btn--back:hover {
   color: var(--indigo-300);
 }
 
@@ -291,7 +292,7 @@
     align-items: stretch;
   }
 
-  .btn-back {
+  .btn--back {
     text-align: center;
   }
 
