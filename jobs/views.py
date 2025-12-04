@@ -202,6 +202,7 @@ def job_list(request):
             "form": form,
             "page": page,
             "has_next": jobs_page.has_next(),
+            "has_previous": jobs_page.has_previous(),
         },
     )
 

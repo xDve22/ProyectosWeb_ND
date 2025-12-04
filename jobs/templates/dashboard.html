@@ -35,16 +35,39 @@
     {% endfor %}
   </ul>
 
-  {% if has_next %}
-    <form class="form-load" method="get">
-      {% for key, value in request.GET.items %}
-        {% if key != 'page' %}
-          <input type="hidden" name="{{ key }}" value="{{ value }}">
+  {% if jobs.has_other_pages %}
+    <div class="pagination">
+      <div class="pagination__buttons">
+        {% if jobs.has_previous %}
+          <form class="pagination__form" method="get">
+            {% for key, value in request.GET.items %}
+              {% if key != 'page' %}
+                <input type="hidden" name="{{ key }}" value="{{ value }}">
+              {% endif %}
+            {% endfor %}
+            <input type="hidden" name="page" value="{{ jobs.previous_page_number }}">
+            <button class="btn-back" type="submit">Previous</button>
+          </form>
         {% endif %}
-      {% endfor %}
-      <input type="hidden" name="page" value="{{ page|add:1 }}">
-      <button class="btn-load" type="submit">Load more</button>
-    </form>
+
+        {% if jobs.has_next %}
+          <form class="pagination__form" method="get">
+            {% for key, value in request.GET.items %}
+              {% if key != 'page' %}
+                <input type="hidden" name="{{ key }}" value="{{ value }}">
+              {% endif %}
+            {% endfor %}
+            <input type="hidden" name="page" value="{{ jobs.next_page_number }}">
+            <button class="btn-load" type="submit">Next</button>
+          </form>
+        {% endif %}
+      </div>
+
+      <span class="pagination__info">
+        Page {{ jobs.number }} of {{ jobs.paginator.num_pages }}
+      </span>
+    </div>
   {% endif %}
+
 </main>
 {% endblock %}
